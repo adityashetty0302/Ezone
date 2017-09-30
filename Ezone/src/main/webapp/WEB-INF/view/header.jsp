@@ -7,13 +7,11 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-
-<img src="<spring:url value="resources/ezone.jpg"/>" alt="">
-
 <nav id="navbar-red" class="navbar navbar-inverse navbar-static-top" role="navigation">
 <div class="container">
 <ul class="nav navbar-nav">
@@ -27,15 +25,28 @@
 </div>
 <div class="collapse navbar-collapse" id="bs-example-nav">
 <ul class="nav navbar-nav">
+<li><a href="#"><img src="<spring:url value="resources/logo.jpg"/>" alt="logo" height="20px" width="90px"></a></li>
 <li><a href="#">Home</a></li>
-<li><a href="#">Register</a></li>
-<li><a href="#">Login</a></li>
-<li><a href="#">Product Category</a></li>
+<li class="w3-dropdown-hover">
+<a class="w3-dropdown-toggle" data-toggle="dropdown" href="#">Product Category<span class="caret"></span></a>
+<div class="w3-dropdown-content w3-bar-block w3-card-4">
+<a href="#" class="w3-bar-item w3">Mobiles</a>
+<a href="#" class="w3-bar-item w3">Laptops</a>
+<a href="#" class="w3-bar-item w3">Games</a>
+<div>
+</li>
 </ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+</ul>
+<form class="navbar-form navbar-left">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Search">
+</div>
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
 </div>
 </nav>
-
-
-
 </body>
 </html>

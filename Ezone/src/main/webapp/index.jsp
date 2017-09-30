@@ -15,38 +15,50 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="<spring:url value="/resources/ezone.jpg"/>" alt="ezone" style="width:300px;height:300px;">
+      <img src="<spring:url value="/resources/car1.jpg"/>" alt="car1">
       <div class="carousel-caption">
-        <h3>Welcome to ezone</h3>
+        <h2>Welcome to ezone</h2>
       </div>
     </div>
 
     <div class="item">
-      <img src="chicago.jpg" alt="Mobiles">
+      <img src="<spring:url value="/resources/car2.jpg"/>" alt="car2" >
       <div class="carousel-caption">
-        <h3>Mobiles</h3>
+        <h2>Mobiles</h2>
       </div>
     </div>
 
     <div class="item">
-      <img src="ny.jpg" alt="Laptops">
+      <img src="<spring:url value="/resources/car3.jpg"/>" alt="car3" >
       <div class="carousel-caption">
-        <h3>Laptops</h3>
+        <h2>Laptops</h2>
+         </div>
+   	 </div>
+        
+    <div class="item">
+      <img src="<spring:url value="/resources/car4.jpg"/>"alt="car4" >
+      <div class="carousel-caption">
+        <h2>Games</h2>
+         </div>
+    	</div>
+        
       </div>
     </div>
-  </div>
+
+
+  
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -59,5 +71,6 @@
   </a>
   </div>
 <h2>Index Page</h2>
+<jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
 </body>
 </html>

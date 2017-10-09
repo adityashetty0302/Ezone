@@ -1,5 +1,9 @@
 package com.Dao;
 
-public interface UserDao {
+import com.model.*;
 
+
+public interface UserDao 
+{
+	public void insertUser(User user);
 }

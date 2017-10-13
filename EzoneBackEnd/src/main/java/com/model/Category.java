@@ -6,7 +6,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Category {
+public class Category 
+{
 	
 	@Id
 	int catId;

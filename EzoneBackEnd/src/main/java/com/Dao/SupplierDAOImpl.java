@@ -9,27 +9,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dao.CategoryDAO;
-import com.model.Category;
+import com.model.Supplier;
 
 
 
-
-
-@Repository("categoryDAO")
-public class CategoryDAOImpl implements CategoryDAO
+@Repository("supplierDAO")
+public class SupplierDAOImpl implements SupplierDAO
 {
 	@Autowired
 	SessionFactory sessionFactory;
 	
 	
+
 	@Transactional
-	public boolean addCategory(Category category) {
-		
+	public boolean addSupplier(Supplier supplier) {
 		try
 		{
 		Session session=sessionFactory.getCurrentSession();
-		session.save(category);
+		session.save(supplier);
 		return true;
 		}
 		catch(Exception e)
@@ -38,23 +35,22 @@ public class CategoryDAOImpl implements CategoryDAO
 		}
 		
 	}
-	
-	
-	public List<Category> retrieveCategory() 
+
+	public List<Supplier> retrieveSupplier() 
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Category");
-		List<Category> listCategory=query.list();
+		Query query=session.createQuery("from Supplier");
+		List<Supplier> listSupplier=query.list();
 		session.close();
-		return listCategory;
+		return listSupplier;
 		
 	}
 	
 	@Transactional
-	public boolean deleteCategory(Category category) {
+	public boolean deleteSupplier(Supplier supplier) {
 		try
 		{
-			sessionFactory.getCurrentSession().delete(category);
+			sessionFactory.getCurrentSession().delete(supplier);
 			return true;
 		}
 		catch(Exception e)
@@ -65,20 +61,20 @@ public class CategoryDAOImpl implements CategoryDAO
 		
 	}
 
-	
-	public Category getCategory(int catId) {
+
+	public Supplier getSupplier(int supId) {
 		Session session=sessionFactory.openSession();
-		Category category=(Category)session.get(Category.class,catId);
+		Supplier supplier=(Supplier)session.get(Supplier.class,supId);
 		session.close();
-		return category;
+		return supplier;
 		
 	}
-	
+
 	@Transactional
-	public boolean updateCategory(Category category) {
+	public boolean updateSupplier(Supplier supplier) {
 		try
 		{
-		sessionFactory.getCurrentSession().saveOrUpdate(category);
+		sessionFactory.getCurrentSession().saveOrUpdate(supplier);
 		return true;
 		}
 		catch(Exception e)
@@ -87,7 +83,9 @@ public class CategoryDAOImpl implements CategoryDAO
 		return false;
 		}
 		
+		
 	}
 	
 	
 }
+

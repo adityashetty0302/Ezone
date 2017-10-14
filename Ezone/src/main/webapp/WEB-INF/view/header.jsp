@@ -48,6 +48,15 @@
 						class="w3-bar-item w3">Laptops</a> <a href="#"
 						class="w3-bar-item w3">Games</a>
 				</div></li>
+			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
+				data-toggle="dropdown" href="#">Admin Tools<span
+					class="caret"></span></a>
+				<div class="w3-dropdown-content w3-bar-block w3-card-4">
+					<a href="Category.jsp" class="w3-bar-item w3">Edit Category</a> 
+					<a href="#" class="w3-bar-item w3">Edit Supplier</a> 
+					<a href="#" class="w3-bar-item w3">Edit Product</a>
+				    <a href="#" class="w3-bar-item w3">Edit Cart</a>
+				</div></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="#"><span class="glyphicon glyphicon-user"></span>

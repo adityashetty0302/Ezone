@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -37,7 +38,7 @@
 	<div class="collapse navbar-collapse" id="bs-example-nav">
 		<ul class="nav navbar-nav">
 			<li><a href="#"><img
-					src="<spring:url value="resources/logo.jpg"/>" alt="logo"
+					src="<c:url value="resources/logo.jpg"/>" alt="logo"
 					height="20px" width="90px"></a></li>
 			<li><a href="#">Home</a></li>
 			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
@@ -52,7 +53,7 @@
 				data-toggle="dropdown" href="#">Admin Tools<span
 					class="caret"></span></a>
 				<div class="w3-dropdown-content w3-bar-block w3-card-4">
-					<a href="Category.jsp" class="w3-bar-item w3">Edit Category</a> 
+					<a href="category" class="w3-bar-item w3">Edit Category</a> 
 					<a href="#" class="w3-bar-item w3">Edit Supplier</a> 
 					<a href="#" class="w3-bar-item w3">Edit Product</a>
 				    <a href="#" class="w3-bar-item w3">Edit Cart</a>

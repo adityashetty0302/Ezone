@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
+
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,28 +20,28 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="<spring:url value="/resources/car1.jpg"/>" alt="car1">
+      <img src="<c:url value="/resources/car1.jpg"/>" alt="car1">
       <div class="carousel-caption">
         <h2>Welcome to ezone</h2>
       </div>
     </div>
 
     <div class="item">
-      <img src="<spring:url value="/resources/car2.jpg"/>" alt="car2" >
+      <img src="<c:url value="/resources/car2.jpg"/>" alt="car2" >
       <div class="carousel-caption">
         <h2>Mobiles</h2>
       </div>
     </div>
 
     <div class="item">
-      <img src="<spring:url value="/resources/car3.jpg"/>" alt="car3" >
+      <img src="<c:url value="/resources/car3.jpg"/>" alt="car3" >
       <div class="carousel-caption">
         <h2>Laptops</h2>
          </div>
    	 </div>
         
     <div class="item">
-      <img src="<spring:url value="/resources/car4.jpg"/>"alt="car4" >
+      <img src="<c:url value="/resources/car4.jpg"/>"alt="car4" >
       <div class="carousel-caption">
         <h2>Games</h2>
          </div>
@@ -61,7 +65,9 @@
   </div>
   
 <h2>Index Page</h2>
-
+<center>
+<a href="category">Category</a>
+</center>
 
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>

@@ -1,13 +1,20 @@
 package com.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Repository;
+
+
+
 @Entity
 @Table
-public class Category 
+public class Category
 {
+	
 	
 	@Id
 	int catId;

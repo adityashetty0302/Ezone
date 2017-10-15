@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
+
 
 <nav class="navbar navbar-inverse">
 <p class="navbar-text">Author: Aditya Shetty</p>

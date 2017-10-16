@@ -1,4 +1,4 @@
-package com.dao;
+package com.Dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dao.CategoryDAO;
+
 import com.model.Category;
 
 

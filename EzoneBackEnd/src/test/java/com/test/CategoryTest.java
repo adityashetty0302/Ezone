@@ -10,7 +10,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.Dao.CategoryDAO;
+import com.dao.CategoryDAO;
 import com.hibernateConfig.hiberConfig;
 import com.model.Category;
 

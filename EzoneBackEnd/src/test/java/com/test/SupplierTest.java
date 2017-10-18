@@ -10,7 +10,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.Dao.SupplierDAO;
+import com.dao.SupplierDAO;
 import com.hibernateConfig.hiberConfig;
 import com.model.Supplier;
 

@@ -7,8 +7,8 @@ import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.Dao.CategoryDAO;
-import com.Dao.ProductDAO;
+import com.dao.CategoryDAO;
+import com.dao.ProductDAO;
 import com.hibernateConfig.hiberConfig;
 import com.model.Product;
 

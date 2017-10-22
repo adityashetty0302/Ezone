@@ -2,6 +2,8 @@ package com.test;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -29,7 +31,7 @@ public class ProductTest
 	}
 	
 	
-	@Test
+//	@Test
 	public void addProductTest()
 	{
 		Product product=new Product();
@@ -43,6 +45,21 @@ public class ProductTest
 		
 		assertTrue("Problem in Insertion",productDAO.addProduct(product));
 		
+	}
+	
+	@Test
+	public void retrieveProductTest()
+	{
+		List<Product> listProducts=productDAO.retrieveProducts();
+		
+		assertTrue("List is Empty",listProducts.size()>0);
+		
+		for(Product product:listProducts)
+		{
+			System.out.println("Product ID:"+product.getProductId());
+			System.out.println("Product Name:"+product.getProductName());
+			System.out.println("Product Desc"+product.getProductDesc());
+		}
 	}
 
 }

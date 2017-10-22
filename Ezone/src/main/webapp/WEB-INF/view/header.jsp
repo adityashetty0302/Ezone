@@ -38,10 +38,10 @@
 	</div>
 	<div class="collapse navbar-collapse" id="bs-example-nav">
 		<ul class="nav navbar-nav">
-			<li><a href="#"><img
+			<li><a href="/Ezone"><img
 					src="<c:url value="resources/logo.jpg"/>" alt="logo"
 					height="20px" width="90px"></a></li>
-			<li><a href="#">Home</a></li>
+			<li><a href="/Ezone">Home</a></li>
 			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
 				data-toggle="dropdown" href="drop">Product Category<span
 					class="caret"></span></a>
@@ -57,7 +57,7 @@
 					class="caret"></span></a>
 				<div class="w3-dropdown-content w3-bar-block w3-card-4">
 					<a href="category" class="w3-bar-item w3">Edit Category</a> 
-					<a href="#" class="w3-bar-item w3">Edit Supplier</a> 
+					<a href="supplier" class="w3-bar-item w3">Edit Supplier</a> 
 					<a href="#" class="w3-bar-item w3">Edit Product</a>
 				    <a href="#" class="w3-bar-item w3">Edit Cart</a>
 				</div></li>

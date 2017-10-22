@@ -21,30 +21,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Category-Frontend</title>
+<title>Supplier-Frontend</title>
 </head>
 <body>
 
 <%@ include file="/WEB-INF/view/header.jsp" %>
 
-  <h2>Category Module</h2>
-  <form:form action="AddCategory" class="form-horizontal" modelAttribute="catmodel" method="post">
+<h2>Supplier Module</h2>
+  <form:form action="AddSupplier" class="form-horizontal" modelAttribute="suppmodel" method="post">
     <div class="form-group">
-      <label class="control-label col-sm-2">Category ID:</label>
+      <label class="control-label col-sm-2">Supplier ID:</label>
       <div class="col-sm-10">
-        <form:input path="catId" class="form-control" />
+        <form:input path="supId" class="form-control" />
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Category Name:</label>
+      <label class="control-label col-sm-2" for="pwd">Supplier Name:</label>
       <div class="col-sm-10">          
-        <form:input path="catName" class="form-control" />
+        <form:input path="supName" class="form-control" />
       </div>
     </div>
       <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Category Desc:</label>
+      <label class="control-label col-sm-2" for="pwd">Supplier Address</label>
       <div class="col-sm-10">          
-        <form:input path="catDesc" class="form-control" />
+        <form:input path="supAdd" class="form-control" />
       </div>
     </div>
     <div class="form-group">        
@@ -59,21 +59,21 @@
 <thead bgcolor="#222">
 
 <tr>
-	<th><font color="#FFFFFF">Category ID</font></th>
-	<th><font color="#FFFFFF">Category Name</font></th>
-	<th><font color="#FFFFFF">Category Description</font></th>
+	<th><font color="#FFFFFF">Supplier ID</font></th>
+	<th><font color="#FFFFFF">Supplier Name</font></th>
+	<th><font color="#FFFFFF">Supplier Address</font></th>
 	<th><font color="#FFFFFF">Update or Delete</font></th>
 </tr>
  </thead>
  <tbody>
-<c:forEach var="catlist" items="${categoryList}">
+<c:forEach var="suplist" items="${supplierList}">
 <tr>
-<td>${catlist.catId}</td>
-<td>${catlist.catName}</td>
-<td>${catlist.catDesc}</td>
+<td>${suplist.supId}</td>
+<td>${suplist.supName}</td>
+<td>${suplist.supAdd}</td>
 <td>
-			<a href="<c:url value="deleteCategory${catlist.catId}"/>">DELETE</a>/
-			<a href="<c:url value="updateCategory${catlist.catId}"/>">UPDATE</a>
+			<a href="<c:url value="deleteSupplier${suplist.supId}"/>">DELETE</a>/
+			<a href="<c:url value="updateSupplier${suplist.supId}"/>">UPDATE</a>
 		</td>
 </tr>
 </c:forEach>
@@ -81,7 +81,13 @@
 </table>
 <br>
 
+
+
+
+
 <%@ include file="/WEB-INF/view/footer.jsp" %>
 
+</body>
+</html>
 </body>
 </html>

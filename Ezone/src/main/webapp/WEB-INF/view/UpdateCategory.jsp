@@ -27,8 +27,8 @@
 
 <%@ include file="/WEB-INF/view/header.jsp" %>
 
-  <h2>Category Module</h2>
-  <form:form action="AddCategory" class="form-horizontal" modelAttribute="catmodel" method="post">
+ <h2>Category Module</h2>
+ <form:form action="${pageContext.request.contextPath}/UpdateCategory" modelAttribute="catmodel" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Category ID:</label>
       <div class="col-sm-10">
@@ -36,13 +36,13 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Category Name:</label>
+      <label class="control-label col-sm-2" >Category Name:</label>
       <div class="col-sm-10">          
         <form:input path="catName" class="form-control" />
       </div>
     </div>
       <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Category Desc:</label>
+      <label class="control-label col-sm-2">Category Desc:</label>
       <div class="col-sm-10">          
         <form:input path="catDesc" class="form-control" />
       </div>
@@ -54,32 +54,8 @@
     </div>
 </form:form>
 
-<br>
-<table class="table table-hover " cellspacing="2" align="center">
-<thead bgcolor="#222">
 
-<tr>
-	<th><font color="#FFFFFF">Category ID</font></th>
-	<th><font color="#FFFFFF">Category Name</font></th>
-	<th><font color="#FFFFFF">Category Description</font></th>
-	<th><font color="#FFFFFF">Update or Delete</font></th>
-</tr>
- </thead>
- <tbody>
-<c:forEach var="catlist" items="${categoryList}">
-<tr>
-<td>${catlist.catId}</td>
-<td>${catlist.catName}</td>
-<td>${catlist.catDesc}</td>
-<td>
-			<a href="<c:url value="deleteCategory${catlist.catId}"/>">DELETE</a>/
-			<a href="<c:url value="updateCategory${catlist.catId}"/>">UPDATE</a>
-		</td>
-</tr>
-</c:forEach>
-</tbody>
-</table>
-<br>
+
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>
 

@@ -66,9 +66,7 @@
   </div>
   
 <h2>Index Page</h2>
-<center>
-<a href="category">Category</a>
-</center>
+
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>
 

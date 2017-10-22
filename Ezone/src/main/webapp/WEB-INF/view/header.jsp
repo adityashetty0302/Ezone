@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
 	<nav id="navbar-red" class="navbar navbar-inverse navbar-static-top"
 		role="navigation">
 	<div class="container">
@@ -42,12 +43,14 @@
 					height="20px" width="90px"></a></li>
 			<li><a href="#">Home</a></li>
 			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
-				data-toggle="dropdown" href="#">Product Category<span
+				data-toggle="dropdown" href="drop">Product Category<span
 					class="caret"></span></a>
 				<div class="w3-dropdown-content w3-bar-block w3-card-4">
-					<a href="#" class="w3-bar-item w3">Mobiles</a> <a href="#"
-						class="w3-bar-item w3">Laptops</a> <a href="#"
-						class="w3-bar-item w3">Games</a>
+					<a href="#" class="w3-bar-item w3">asd</a> <a href="#"
+						class="w3-bar-item w3">asdsad</a> 
+						<a href="#"
+						class="w3-bar-item w3">${catlist.catName}</a>
+					
 				</div></li>
 			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
 				data-toggle="dropdown" href="#">Admin Tools<span
@@ -73,3 +76,5 @@
 		</form>
 	</div>
 	</nav>
+
+	

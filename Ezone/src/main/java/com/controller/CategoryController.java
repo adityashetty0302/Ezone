@@ -73,5 +73,19 @@ public class CategoryController
 		return "Category";
 	}
 	
+	@RequestMapping(value="/Category",method=RequestMethod.POST)
+	public String updateMyCategory(@ModelAttribute("catmodel")Category category,Model m)
+	{
+		categoryDAO.updateCategory(category);
+		
+
+		
+		
+		List<Category> listCategory=categoryDAO.retrieveCategory();
+		m.addAttribute("categoryList",listCategory);
+		
+		return "Category";
+	}
+	
 
 }

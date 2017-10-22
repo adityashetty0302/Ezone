@@ -51,6 +51,7 @@ public class hiberConfig
 		 Properties hibernateProperties = new Properties();
 		 hibernateProperties.setProperty("hibernate.hbm2ddl.auto","update");
 		 hibernateProperties.put("hibernate.dialect","org.hibernate.dialect.H2Dialect");
+		 hibernateProperties.put("hibernate.show_sql", "true");
 		
 		 LocalSessionFactoryBuilder localSessionFacBuilder=new LocalSessionFactoryBuilder(getH2());
 		 localSessionFacBuilder.addProperties(hibernateProperties);

@@ -31,19 +31,19 @@
   <form:form action="AddCategory" class="form-horizontal" modelAttribute="catmodel" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Category ID:</label>
-      <div class="col-sm-10">
+      <div class="col-sm-5">
         <form:input path="catId" class="form-control" />
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Category Name:</label>
-      <div class="col-sm-10">          
+      <div class="col-sm-5">          
         <form:input path="catName" class="form-control" />
       </div>
     </div>
       <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Category Desc:</label>
-      <div class="col-sm-10">          
+      <div class="col-sm-5">          
         <form:input path="catDesc" class="form-control" />
       </div>
     </div>

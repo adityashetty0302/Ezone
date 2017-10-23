@@ -35,29 +35,47 @@
         <form:input path="catId" class="form-control" />
       </div>
     </div>
+    <br>
     <div class="form-group">
       <label class="control-label col-sm-2" >Category Name:</label>
       <div class="col-sm-10">          
         <form:input path="catName" class="form-control" />
       </div>
     </div>
+    <br>
       <div class="form-group">
       <label class="control-label col-sm-2">Category Desc:</label>
       <div class="col-sm-10">          
         <form:input path="catDesc" class="form-control" />
       </div>
     </div>
+    <br>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-primary navbar-inverse">Insert</button>
       </div>
     </div>
 </form:form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
-
-<%@ include file="/WEB-INF/view/footer.jsp" %>
+ <%@ include file="/WEB-INF/view/footer.jsp" %>
 
 </body>
 </html>

@@ -60,34 +60,34 @@ public class CategoryController
 		return "Category";
 	} 
 	
-//	@RequestMapping(value="/updateCategory{catId}",method=RequestMethod.GET)
-//	public String updateCategory(@PathVariable("catId") int catId,Model m)
-//	{
-//		Category category=categoryDAO.getCategory(catId);
-//		m.addAttribute("catmodel", category);
-//		
-//		List<Category> listCategory=categoryDAO.retrieveCategory();
-//		m.addAttribute("categoryList",listCategory);
-//		m.addAttribute("catmodel", category);
-//		
-//		
-//		
-//		return "UpdateCategory";
-//	}
-//	
-//	@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
-//	public String updateMyCategory(@ModelAttribute("catmodel")Category category,Model m)
-//	{
-//		categoryDAO.updateCategory(category);
-//		
-//		Category category1=new Category();
-//		m.addAttribute(category1);
-//		
-//		List<Category> listCategory=categoryDAO.retrieveCategory();
-//		m.addAttribute("categoryList",listCategory);
-//		
-//		return "redirect:/category";
-//	}
-//	
+	@RequestMapping(value="/updateCategory{catId}",method=RequestMethod.GET)
+	public String updateCategory(@PathVariable("catId") int catId,Model m)
+	{
+		Category category=categoryDAO.getCategory(catId);
+		m.addAttribute("catmodel", category);
+		
+		List<Category> listCategory=categoryDAO.retrieveCategory();
+		m.addAttribute("categoryList",listCategory);
+		
+		
+		
+		
+		return "UpdateCategory";
+	}
+	
+	@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
+	public String updateMyCategory(@ModelAttribute("catmodel")Category category,Model m)
+	{
+		categoryDAO.updateCategory(category);
+		
+		
+		
+		List<Category> listCategory=categoryDAO.retrieveCategory();
+		m.addAttribute("categoryList",listCategory);
+		m.addAttribute("catmodel", new Category());
+		
+		return "Category";
+	}
+	
 
 }

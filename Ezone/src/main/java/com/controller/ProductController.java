@@ -114,5 +114,15 @@ public class ProductController
 		return "Product";
 	}
 	
+	
+	@RequestMapping(value="/productlist",method=RequestMethod.GET)
+	public String showProducts(Model m)
+	{
+		List<Product> listProduct=productDAO.retrieveProducts();
+		m.addAttribute("productList",listProduct);
+		return "ProductList";
+	
+	}
+	
 
 }

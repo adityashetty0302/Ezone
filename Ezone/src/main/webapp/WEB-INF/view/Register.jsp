@@ -22,6 +22,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link href="<c:url value="/resources/regpass.css" />" rel="stylesheet">
+	<script src="<c:url value="/resources/regpass.js" />"></script>
+	
 <title>Product-Frontend</title>
 </head>
 <body>
@@ -59,12 +63,13 @@
 							<div class="col-sm-5">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="password" id="paw"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
 						
 						
+							
 						
 						<div class="form-group">
 							<label for="phone" class="control-label col-sm-1">Phone</label>
@@ -112,6 +117,18 @@
 </div>
 </div>
 	
+	<div class="aro-pswd_info">
+				<div id="pswd_info">
+					<h4>Password requirements</h4>
+					<ul>
+						<li id="letter" class="invalid">At least <strong>one letter</strong></li>
+						<li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+						<li id="number" class="invalid">At least <strong>one number</strong></li>
+						<li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+						<li id="space" class="invalid">be<strong> use [~,!,@,#,$,%,^,&,*,-,=,.,;,']</strong></li>
+					</ul>
+				</div>
+			</div>
 <br>
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>

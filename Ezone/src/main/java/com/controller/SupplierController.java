@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dao.SupplierDAO;
+
 import com.model.Supplier;
 
 
@@ -59,6 +60,35 @@ public class SupplierController
 	
 		return "Supplier";
 	} 
+	
+	@RequestMapping(value="/updateSupplier{supId}",method=RequestMethod.GET)
+	public String updateSupplier(@PathVariable("supId") int supId,Model m)
+	{
+		Supplier supplier=supplierDAO.getSupplier(supId);
+		m.addAttribute("suppmodel", supplier);
+		
+		List<Supplier> listSupplier=supplierDAO.retrieveSupplier();
+		m.addAttribute("supplierList",listSupplier);
+		
+		
+		
+		
+		return "UpdateSupplier";
+	}
+	
+	@RequestMapping(value="/UpdateSupplier",method=RequestMethod.POST)
+	public String updateMySupplier(@ModelAttribute("suppmodel")Supplier supplier,Model m)
+	{
+		supplierDAO.updateSupplier(supplier);
+		
+		
+		
+		List<Supplier> listsupplier=supplierDAO.retrieveSupplier();
+		m.addAttribute("supplierList",listsupplier);
+		m.addAttribute("suppmodel", new Supplier());
+		
+		return "Supplier";
+	}
 	
 
 	

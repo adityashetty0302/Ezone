@@ -48,9 +48,9 @@
 				<div class="w3-dropdown-content w3-bar-block w3-card-4">
 					<a href="#" class="w3-bar-item w3">asd</a> <a href="#"
 						class="w3-bar-item w3">asdsad</a> 
-						<%-- <c:forEach var="catlist" items="${categoryList}">
+						 <c:forEach var="catlist" items="${categoryList}">
 							<a href="#" class="w3-bar-item w3">${catlist.catName}</a>
-							</c:forEach> --%>
+							</c:forEach>
 		</div></li>
 			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
 				data-toggle="dropdown" href="#">Admin Tools<span
@@ -63,7 +63,7 @@
 				</div></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+			<li><a href="register"><span class="glyphicon glyphicon-user"></span>
 					Sign Up</a></li>
 			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
 					Login</a></li>

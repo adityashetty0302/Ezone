@@ -1,32 +1,27 @@
 package com.model;
 
-
-
-import java.io.Serializable;
-
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
-
-import javax.persistence.*;
-
-@Component
 @Entity
+@Table
 
-public class User implements Serializable 
+public class User 
 {
 
-	private static final long serialVersionUID = 1L;
+	
 	
 	@Id
-	private String email;
-	private String name;
-	private String phone;
-	private String address;
-	private String password;
-	private String role;
-	private String country;
-	private boolean enabled;
+	String email;
+	
+	 String name;
+	 String phone;
+	 String address;
+	 String password;
+	 String role;
+	 String country;
+	 boolean enabled;
 	
 	public String getEmail() {
 		return email;

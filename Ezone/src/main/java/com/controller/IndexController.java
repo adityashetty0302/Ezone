@@ -22,6 +22,7 @@ public class IndexController {
 		List<Category> listCategory=categoryDAO.retrieveCategory();
 		m.addAttribute("categoryList",listCategory);
 		return "index";
-	
 	}
+	
+	
 }

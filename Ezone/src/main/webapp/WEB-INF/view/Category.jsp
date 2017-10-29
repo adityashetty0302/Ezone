@@ -27,7 +27,9 @@
 
 <%@ include file="/WEB-INF/view/header.jsp" %>
 
-  <h2>Category Module</h2>
+<div class="container">
+  	<div class="row main">
+  	<h2>Category Module</h2>
   <form:form action="AddCategory" class="form-horizontal" modelAttribute="catmodel" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Category ID:</label>
@@ -49,12 +51,19 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
+      	
         <button type="submit" class="btn btn-primary navbar-inverse">Insert</button>
+        
       </div>
     </div>
 </form:form>
+</div>
+</div>
+
 
 <br>
+<div class="container">
+  	<div class="row main">
 <table class="table table-hover " cellspacing="2" align="center">
 <thead bgcolor="#222">
 
@@ -72,13 +81,15 @@
 <td>${catlist.catName}</td>
 <td>${catlist.catDesc}</td>
 <td>
-			<a href="<c:url value="deleteCategory${catlist.catId}"/>">DELETE</a>/
-			<a href="<c:url value="updateCategory${catlist.catId}"/>">UPDATE</a>
+			 <input type="button" class="btn btn-info navbar-inverse" value="Delete" onclick="location.href = '<c:url value="deleteCategory${catlist.catId}"/>';"> /
+			 <input type="button" class="btn btn-info navbar-inverse" value="Update" onclick="location.href = '<c:url value="updateCategory${catlist.catId}"/>';">
 		</td>
 </tr>
 </c:forEach>
 </tbody>
 </table>
+</div>
+</div>
 <br>
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>

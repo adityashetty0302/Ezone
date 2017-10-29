@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.model.Category;
 import com.model.Product;
 import com.model.Supplier;
+import com.model.User;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
@@ -58,6 +59,7 @@ public class hiberConfig
 		 localSessionFacBuilder.addAnnotatedClass(Category.class);
 		 localSessionFacBuilder.addAnnotatedClass(Supplier.class);
 		 localSessionFacBuilder.addAnnotatedClass(Product.class);
+		 localSessionFacBuilder.addAnnotatedClass(User.class);
 		 SessionFactory sessionFactory=localSessionFacBuilder.buildSessionFactory();
 		 System.out.println("Session Factory Object Created");
 		 return sessionFactory;

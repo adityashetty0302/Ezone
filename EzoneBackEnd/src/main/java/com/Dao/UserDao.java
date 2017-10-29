@@ -3,7 +3,8 @@ package com.dao;
 import com.model.*;
 
 
-public interface UserDao 
+public interface UserDAO 
 {
-	public void insertUser(User user);
+	public boolean addUser(User user);
+	
 }

@@ -83,7 +83,7 @@ public class ProductController
 		
 		productDAO.addProduct(product);
 		
-		String path="C:\\DT-S180132\\FashionFrontend\\src\\main\\webapp\\resources\\images\\";
+		String path="C:\\Users\\Aditya Shetty\\Desktop\\Core Java\\Practice\\Eclipse\\Ezone\\src\\main\\webapp\\resources\\";
 		
 		String totalFileWithPath=path+String.valueOf(product.getProductId())+".jpg";
 		
@@ -109,8 +109,7 @@ public class ProductController
 			m.addAttribute("error","Problem in File Uploading");
 		}
 		
-		Product product1=new Product();
-		m.addAttribute(product1);
+		m.addAttribute("prodmodel", new Product());
 		
 		return "Product";
 	}

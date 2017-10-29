@@ -28,9 +28,90 @@
 
 <%@ include file="/WEB-INF/view/header.jsp" %>
 
-<br>
+<div class="container">
+  	<div class="row main">
+  	<h2>Registration Form</h2>
+  <form:form action="AddUser" class="form-horizontal" modelAttribute="usermodel" method="post">
+  
+  
+  <div class="form-group">
+							<label for="name" class="control-label col-sm-1">Name</label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
+  
+    <div class="form-group">
+							<label for="email" class="control-label col-sm-1">Email</label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
 
-
+<div class="form-group">
+							<label for="password" class="control-label col-sm-1">Password</label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						<div class="form-group">
+							<label for="phone" class="control-label col-sm-1">Phone</label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="phone" id="phone"  placeholder="Enter your Phone No."/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="country" class="control-label col-sm-1">Country</label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-globe fa-lg" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="country" id="country"  placeholder="Enter Country"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="address" class="control-label col-sm-1">Address</label>
+							<div class="col-sm-11">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="address" id="country"  placeholder="Enter your Address"/>
+								</div>
+							</div>
+						</div>
+						
+						 <div class="form-group">        
+      <div class="col-sm-offset-1 col-sm-10">
+      	
+        <button type="submit" class="btn btn-primary navbar-inverse">Submit</button>
+         <button type="reset" class="btn btn-primary navbar-inverse">Cancel</button>
+        
+      </div>
+    </div>
+    
+    </form:form>
+    
+    
+    
+</div>
+</div>
+	
 <br>
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>

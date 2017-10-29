@@ -1,13 +1,19 @@
 package com.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.dao.CategoryDAO;
 import com.dao.ProductDAO;
@@ -68,6 +74,45 @@ public class ProductController
 		}
 		
 		return supplierList;
+	}
+	
+	
+	@RequestMapping(value="/AddProduct",method=RequestMethod.POST)
+	public String insertProduct(@ModelAttribute("prodmodel")Product product,@RequestParam("pimage")MultipartFile fileDetail,Model m)
+	{
+		
+		productDAO.addProduct(product);
+		
+		String path="C:\\DT-S180132\\FashionFrontend\\src\\main\\webapp\\resources\\images\\";
+		
+		String totalFileWithPath=path+String.valueOf(product.getProductId())+".jpg";
+		
+		File productImage=new File(totalFileWithPath);
+		
+		if(!fileDetail.isEmpty())
+		{
+			try
+			{
+				byte fileBuffer[]=fileDetail.getBytes();
+				FileOutputStream fos=new FileOutputStream(productImage);
+				BufferedOutputStream bs=new BufferedOutputStream(fos);
+				bs.write(fileBuffer);
+				bs.close();
+			}
+			catch(Exception e)
+			{
+				m.addAttribute("error",e.getMessage());
+			}
+		}
+		else
+		{
+			m.addAttribute("error","Problem in File Uploading");
+		}
+		
+		Product product1=new Product();
+		m.addAttribute(product1);
+		
+		return "Product";
 	}
 	
 

@@ -134,7 +134,7 @@
 <td>${prodlist.catId}</td>
 <td>${prodlist.supId}</td>
 <td>
-<img src="<c:url value="/resources/${prodlist.productId}.jpg"/>" width="100px" height="100px"/>
+<img src="<c:url value="/resources/${prodlist.productId}.jpg"/>" width="100px" height="80px"/>
 </td>
 
 <td>

@@ -10,9 +10,10 @@
 
 .item.list-group-item
 {
+	
     float: none;
     width: 100%;
-    background-color: #fff;
+    background-color: #222;
     margin-bottom: 10px;
 }
 .item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
@@ -34,7 +35,7 @@
 }
 .item.list-group-item:nth-of-type(odd)
 {
-    background: #eeeeee;
+    background: #222;
 }
 
 .item.list-group-item:before, .item.list-group-item:after

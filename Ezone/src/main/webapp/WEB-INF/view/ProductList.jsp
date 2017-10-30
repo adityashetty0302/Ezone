@@ -32,43 +32,42 @@
 
 <%@ include file="/WEB-INF/view/header.jsp" %>
 
-<br>
+
 
 <div class="container">
-    <div class="well well-sm">
-        <strong>All Products</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+	<table class="table table-hover " >
+<thead bgcolor="#222">
+<tr>
+	<th><font color="#FFFFFF">All Products</font>&nbsp;
+<div class="btn-group">
+            <a href="#" id="list" class="btn btn-primary navbar-inverse"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-primary navbar-inverse"><span
                 class="glyphicon glyphicon-th"></span>Grid</a>
-        </div>
-    </div>
+</div>
+        </th>	
+</tr>
+ </thead>
+ </table>
     <div id="products" class="row list-group">
     <c:forEach items="${productList}" var="product">
-        <div class="item  col-xs-4 col-lg-4">
+        <div class="item  col-xs-4 col-lg-3">
             <div class="thumbnail">
-                <img class="group list-group-image" src="<c:url value="/resources/${product.productId}.jpg"/>" width="400px" height="250px"/>
+            <a href="productDesc/${product.productId}">
+                <img class="group list-group-image" src="<c:url value="/resources/${product.productId}.jpg"/>" width="400px" height="250px"/></a>
                 <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
+                    <h3 class="group inner list-group-item-heading">
                     <a href="productDesc/${product.productId}">${product.productName}</a>
-                        </h4>
-                   
+                        </h3>
                         </div>
-                        
                         <div class="row">
-                        <div class="col-xs-12 col-xs-6">
-                            <p class="lead">
-                                Category: ${product.catId}</p>
-                        </div>
-                   
-                    <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <p class="lead">
-                               Rs.${product.price}</p>
+                                Rs.${product.price}</p>
                         </div>
-                       
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-primary navbar-inverse" href="#">Add to cart</a>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
         </c:forEach>

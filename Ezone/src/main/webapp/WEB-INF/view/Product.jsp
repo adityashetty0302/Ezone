@@ -1,6 +1,5 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ page language="java" import="com.model.Product"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
@@ -74,7 +73,9 @@
 				<form:options items="${categoryList}"/>
 			</form:select>
       </div>
-    </div>
+     
+      </div>
+    
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Supplier</label>
       <div class="col-sm-5">          
@@ -103,6 +104,52 @@
 
 
 <br>
+
+<br>
+<div class="container">
+  	<div class="row main">
+<table class="table table-hover " cellspacing="2" align="center">
+<thead bgcolor="#222">
+
+<tr>
+	<th><font color="#FFFFFF">Product ID</font></th>
+	<th><font color="#FFFFFF">Product Name</font></th>
+	<th><font color="#FFFFFF">Product Description</font></th>
+	<th><font color="#FFFFFF">Price</font></th>
+	<th><font color="#FFFFFF">Stock</font></th>
+	<th><font color="#FFFFFF">Category Id</font></th>
+	<th><font color="#FFFFFF">Supplier Id</font></th>
+	<th><font color="#FFFFFF">Picture</font></th>
+	<th><font color="#FFFFFF">Update or Delete</font></th>
+</tr>
+ </thead>
+ <tbody>
+<c:forEach var="prodlist" items="${productList}">
+<tr>
+<td>${prodlist.productId}</td>
+<td>${prodlist.productName}</td>
+<td>${prodlist.productDesc}</td>
+<td>${prodlist.price}</td>
+<td>${prodlist.stock}</td>
+<td>${prodlist.catId}</td>
+<td>${prodlist.supId}</td>
+<td>
+<img src="<c:url value="/resources/${prodlist.productId}.jpg"/>" width="100px" height="100px"/>
+</td>
+
+<td>
+	 <input type="button" class="btn btn-info navbar-inverse" value="Delete" onclick="location.href = '<c:url value="deleteProduct${prodlist.productId}"/>';"> /
+	 <input type="button" class="btn btn-info navbar-inverse" value="Update" onclick="location.href = '<c:url value="updateProduct${prodlist.productId}"/>';">
+</td>
+
+</tr>
+</c:forEach>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>
 

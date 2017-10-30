@@ -64,7 +64,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <p class="lead">
-                               Price: Rs.${product.price}</p>
+                               Rs.${product.price}</p>
                         </div>
                        
                     </div>

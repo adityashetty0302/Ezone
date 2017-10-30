@@ -18,6 +18,8 @@ public class Product
 	String productName,productDesc;
 	int stock,price,catId,supId;
 	
+	
+
 	@Transient
 	MultipartFile pimage;
 	

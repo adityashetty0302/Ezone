@@ -58,9 +58,21 @@ public class ProductDAOImpl implements ProductDAO
 		
 	}
 
+	@Transactional
 	public boolean updateProduct(Product product) {
-		// TODO Auto-generated method stub
+		try
+		{
+		sessionFactory.getCurrentSession().saveOrUpdate(product);
+		return true;
+		}
+		catch(Exception e)
+		{
+		System.out.println("Exception Arised:"+e);
 		return false;
+		}
+		
+	
+		
 	}
 
 	public Product getProduct(int productId) 

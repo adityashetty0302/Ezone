@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,9 +44,10 @@ public class ProductController
 	{
 		List<Product> listProduct=productDAO.retrieveProducts();
 		m.addAttribute("productList",listProduct);
-		m.addAttribute("prodmodel", new Product());
+		
 		m.addAttribute("categoryList",this.getCategories());
 		m.addAttribute("supplierList",this.getSuppliers());
+		m.addAttribute("prodmodel", new Product());
 		return "Product";
 		
 	}
@@ -58,7 +60,9 @@ public class ProductController
 		for(Category category:listCategories)
 		{
 			categoriesList.put(category.getCatId(),category.getCatName());
+			
 		}
+		
 		
 		return categoriesList;
 	}
@@ -72,6 +76,7 @@ public class ProductController
 		{
 			supplierList.put(supplier.getSupId(),supplier.getSupName());
 		}
+		
 		
 		return supplierList;
 	}
@@ -109,20 +114,77 @@ public class ProductController
 			m.addAttribute("error","Problem in File Uploading");
 		}
 		
+		
+		List<Product> listProduct=productDAO.retrieveProducts();
+		m.addAttribute("productList",listProduct);
+		
+		m.addAttribute("categoryList",this.getCategories());
+		m.addAttribute("supplierList",this.getSuppliers());
 		m.addAttribute("prodmodel", new Product());
 		
 		return "Product";
 	}
 	
 	
+	@RequestMapping(value="/deleteProduct{productId}")
+	public String deleteProduct(@PathVariable("productId")int productId,Model m)
+	{
+		Product product=productDAO.getProduct(productId);
+		
+		productDAO.deleteProduct(product);
+		
+		List<Product> listProduct=productDAO.retrieveProducts();
+		m.addAttribute("productList",listProduct);
+		
+		m.addAttribute("categoryList",this.getCategories());
+		m.addAttribute("supplierList",this.getSuppliers());
+		m.addAttribute("prodmodel", new Product());
+	
+		return "Product";
+	} 
+	
+	@RequestMapping(value="/updateProduct{productId}",method=RequestMethod.GET)
+	public String updateProduct(@PathVariable("productId") int productId,Model m)
+	{
+		Product product=productDAO.getProduct(productId);
+		m.addAttribute("categoryList",this.getCategories());
+		m.addAttribute("supplierList",this.getSuppliers());
+		m.addAttribute("prodmodel", product);
+		
+		List<Product> listProduct=productDAO.retrieveProducts();
+		m.addAttribute("productList",listProduct);
+		
+		
+		
+		
+		return "UpdateProduct";
+	}
+	
+	@RequestMapping(value="/UpdateProduct",method=RequestMethod.POST)
+	public String updateMyProduct(@ModelAttribute("prodmodel")Product product,Model m)
+	{
+		productDAO.updateProduct(product);
+		
+		List<Product> listProduct=productDAO.retrieveProducts();
+		m.addAttribute("productList",listProduct);
+		
+		m.addAttribute("categoryList",this.getCategories());
+		m.addAttribute("supplierList",this.getSuppliers());
+		m.addAttribute("prodmodel", new Product());
+		
+		return "Product";
+	}
+	
 	@RequestMapping(value="/productlist",method=RequestMethod.GET)
 	public String showProducts(Model m)
 	{
 		List<Product> listProduct=productDAO.retrieveProducts();
 		m.addAttribute("productList",listProduct);
+		
+		m.addAttribute("prodmodel", new Product());
+		
 		return "ProductList";
 	
 	}
-	
 
 }

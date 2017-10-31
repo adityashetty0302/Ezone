@@ -187,4 +187,15 @@ public class ProductController
 	
 	}
 
+	@RequestMapping(value="/productDesc/{productId}",method=RequestMethod.GET)
+	public String showProductDesc(@PathVariable("productId")int productId,Model m)
+	{
+		
+		Product product=productDAO.getProduct(productId);
+		
+		m.addAttribute("prodmodel", product);
+		
+		return "ProductDesc";
+	
+	}
 }

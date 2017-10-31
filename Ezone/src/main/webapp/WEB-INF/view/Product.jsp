@@ -68,7 +68,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Category</label>
       <div class="col-sm-5">          
-        <form:select path="catId">
+        <form:select path="catName">
 				<form:option value="0" label="---Select---"/>
 				<form:options items="${categoryList}"/>
 			</form:select>
@@ -79,7 +79,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Supplier</label>
       <div class="col-sm-5">          
-        <form:select path="supId">
+        <form:select path="supName">
 				<form:option value="0" label="---Select---"/>
 				<form:options items="${supplierList}"/>
 			</form:select>
@@ -131,8 +131,8 @@
 <td>${prodlist.productDesc}</td>
 <td>${prodlist.price}</td>
 <td>${prodlist.stock}</td>
-<td>${prodlist.catId}</td>
-<td>${prodlist.supId}</td>
+<td>${prodlist.catName}</td>
+<td>${prodlist.supName}</td>
 <td>
 <img src="<c:url value="/resources/${prodlist.productId}.jpg"/>" width="100px" height="80px"/>
 </td>

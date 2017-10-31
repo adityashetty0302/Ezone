@@ -1,5 +1,6 @@
 package com.test;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import com.dao.CategoryDAO;
 import com.dao.ProductDAO;
 import com.hibernateConfig.hiberConfig;
 import com.model.Product;
+import com.model.Supplier;
 
 
 public class ProductTest 
@@ -47,8 +49,10 @@ public class ProductTest
 		
 	}
 	
-	@Test
+//	@Test
 	public void retrieveProductTest()
+
+	
 	{
 		List<Product> listProducts=productDAO.retrieveProducts();
 		
@@ -61,5 +65,16 @@ public class ProductTest
 			System.out.println("Product Desc"+product.getProductDesc());
 		}
 	}
+	
+	@Test
+	public void getProductTest()
+	{
+		Product product=productDAO.getProduct(1);
+		assertNotNull("Problem in Getting:",product);
+		System.out.println("Product ID:"+product.getProductId());
+		System.out.println("Product Name:"+product.getProductName());
+		System.out.println("Product Desc  = "+product.getProductDesc());
+	}
+	
 
 }

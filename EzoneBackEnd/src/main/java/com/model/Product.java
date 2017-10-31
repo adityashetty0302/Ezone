@@ -15,7 +15,19 @@ public class Product
 	@Id
 	int productId;
 	
-	String productName,productDesc;
+	String productName,productDesc,catName,supName;
+	public String getCatName() {
+		return catName;
+	}
+	public void setCatName(String catName) {
+		this.catName = catName;
+	}
+	public String getSupName() {
+		return supName;
+	}
+	public void setSupName(String supName) {
+		this.supName = supName;
+	}
 	int stock,price,catId,supId;
 	
 	

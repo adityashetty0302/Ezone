@@ -39,7 +39,7 @@
 	<div class="collapse navbar-collapse" id="bs-example-nav">
 		<ul class="nav navbar-nav">
 			<li><a href="/Ezone"><img
-					src="<c:url value="resources/logo.jpg"/>" alt="logo"
+					src="<c:url value="resources/logo.jpg"/>" alt=""
 					height="20px" width="90px"></a></li>
 			<li><a href="/Ezone">Home</a></li>
 			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"

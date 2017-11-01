@@ -4,6 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,35 +53,38 @@ public class ProductController
 		
 	}
 	
-	public LinkedHashMap<Integer,String> getCategories()
-	{
-		List<Category> listCategories=categoryDAO.retrieveCategory();
-		LinkedHashMap<Integer,String> categoriesList=new LinkedHashMap<Integer,String>();
-		
-		for(Category category:listCategories)
+	
+		public List<String> getCategories()
 		{
-			categoriesList.put(category.getCatId(),category.getCatName());
+			List<Category> listCategories=categoryDAO.retrieveCategory();
+			List<String> categoriesList=new LinkedList<String>();
 			
-		}
+			for(Category category:listCategories)
+			{
+				categoriesList.add(category.getCatName());
+				
+			}
 		
 		
 		return categoriesList;
 	}
-	
-	public LinkedHashMap<Integer,String> getSuppliers()
-	{
-		List<Supplier> listSupplier=supplierDAO.retrieveSupplier();
-		LinkedHashMap<Integer,String> supplierList=new LinkedHashMap<Integer,String>();
 		
-		for(Supplier supplier:listSupplier)
+		public List<String> getSuppliers()
 		{
-			supplierList.put(supplier.getSupId(),supplier.getSupName());
-		}
+			List<Supplier> listSuppliers=supplierDAO.retrieveSupplier();
+			List<String> suppliersList=new LinkedList<String>();
+			
+			for(Supplier supplier:listSuppliers)
+			{
+				suppliersList.add(supplier.getSupName());
+				
+			}
 		
 		
-		return supplierList;
+		return suppliersList;
 	}
 	
+
 	
 	@RequestMapping(value="/AddProduct",method=RequestMethod.POST)
 	public String insertProduct(@ModelAttribute("prodmodel")Product product,@RequestParam("pimage")MultipartFile fileDetail,Model m)

@@ -16,22 +16,23 @@ public class Product
 	int productId;
 	
 	String productName,productDesc,catName,supName;
-	public String getCatName() {
-		return catName;
-	}
-	public void setCatName(String catName) {
-		this.catName = catName;
-	}
-	public String getSupName() {
-		return supName;
-	}
-	public void setSupName(String supName) {
-		this.supName = supName;
-	}
+	
 	int stock,price,catId,supId;
 	
 	
 
+	public int getCatId() {
+		return catId;
+	}
+	public void setCatId(int catId) {
+		this.catId = catId;
+	}
+	public int getSupId() {
+		return supId;
+	}
+	public void setSupId(int supId) {
+		this.supId = supId;
+	}
 	@Transient
 	MultipartFile pimage;
 	
@@ -41,6 +42,20 @@ public class Product
 	public void setPimage(MultipartFile pimage) {
 		this.pimage = pimage;
 	}
+		
+		public String getCatName() {
+			return catName;
+		}
+		public void setCatName(String catName) {
+			this.catName = catName;
+		}
+		public String getSupName() {
+			return supName;
+		}
+		public void setSupName(String supName) {
+			this.supName = supName;
+		}
+	
 	public int getProductId() {
 		return productId;
 	}
@@ -70,18 +85,6 @@ public class Product
 	}
 	public void setPrice(int price) {
 		this.price = price;
-	}
-	public int getCatId() {
-		return catId;
-	}
-	public void setCatId(int catId) {
-		this.catId = catId;
-	}
-	public int getSupId() {
-		return supId;
-	}
-	public void setSupId(int supId) {
-		this.supId = supId;
 	}
 	
 	

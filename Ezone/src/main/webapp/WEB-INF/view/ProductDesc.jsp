@@ -51,6 +51,8 @@
 						<h3 class="product-title">${prodmodel.productName}</h3>
 						
 						<p class="product-description">${prodmodel.productDesc}</p>
+						<p class="product-description">Category: ${prodmodel.catName}</p>
+						<p class="product-description">Supplier: ${prodmodel.supName}</p>
 							<p class="product-description">Stock: ${prodmodel.stock}</p>
 						
 						<h4 class="price">Price:<span> Rs.${prodmodel.price}</span></h4>

@@ -117,8 +117,8 @@
 	<th><font color="#FFFFFF">Product Description</font></th>
 	<th><font color="#FFFFFF">Price</font></th>
 	<th><font color="#FFFFFF">Stock</font></th>
-	<th><font color="#FFFFFF">Category Id</font></th>
-	<th><font color="#FFFFFF">Supplier Id</font></th>
+	<th><font color="#FFFFFF">Category Name</font></th>
+	<th><font color="#FFFFFF">Supplier Name</font></th>
 	<th><font color="#FFFFFF">Picture</font></th>
 	<th><font color="#FFFFFF">Update or Delete</font></th>
 </tr>

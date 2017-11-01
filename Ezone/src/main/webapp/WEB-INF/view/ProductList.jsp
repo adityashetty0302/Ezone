@@ -59,9 +59,19 @@
                 <img class="group list-group-image" src="<c:url value="/resources/${product.productId}.jpg"/>" width="400px" height="250px"/></a>
                 <div class="caption">
                     <h3 class="group inner list-group-item-heading">
-                    <a href="/productDesc/${product.productId}">${product.productName}</a>
+                    <a href="productDesc/${product.productId}">${product.productName}</a>
                         </h3>
                         </div>
+                        
+                        <div class="row">
+                         
+                          
+                           <div class="col-xs-12 col-md-7">
+                    Category: ${product.catName}
+                    
+                        </div>
+                        </div>
+                        
                         <div class="row">
                         <div class="col-xs-12 col-md-7">
                             <p class="lead"><font color="red">
@@ -71,6 +81,7 @@
                             <a class="btn btn-primary navbar-inverse" href="#">Add to cart</a>
                         </div>
                     </div>
+               
             </div>
         </div>
         </c:forEach>

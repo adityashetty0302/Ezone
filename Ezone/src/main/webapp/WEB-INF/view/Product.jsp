@@ -120,7 +120,7 @@
 	<th><font color="#FFFFFF">Category Name</font></th>
 	<th><font color="#FFFFFF">Supplier Name</font></th>
 	<th><font color="#FFFFFF">Picture</font></th>
-	<th><font color="#FFFFFF">Update or Delete</font></th>
+	<th><font color="#FFFFFF">Delete or Update</font></th>
 </tr>
  </thead>
  <tbody>
@@ -138,7 +138,7 @@
 </td>
 
 <td>
-	 <input type="button" class="btn btn-info navbar-inverse" value="Delete" onclick="location.href = '<c:url value="deleteProduct${prodlist.productId}"/>';"> /
+	 <input type="button" class="btn btn-info navbar-inverse" value="Delete" onclick="location.href = '<c:url value="deleteProduct${prodlist.productId}"/>';">
 	 <input type="button" class="btn btn-info navbar-inverse" value="Update" onclick="location.href = '<c:url value="updateProduct${prodlist.productId}"/>';">
 </td>
 

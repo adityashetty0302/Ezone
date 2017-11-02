@@ -1,0 +1,38 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		 http://www.springframework.org/schema/context
+	     http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<context:component-scan base-package="com.*"></context:component-scan>
+
+<http pattern="/resources/**" security="none" />
+
+
+	<http>
+		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+		<form-login login-page="/login"
+		
+		/>
+		<logout />
+		<csrf disabled="true"/>
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+		<jdbc-user-service data-source-ref="datasource"
+		users-by-username-query="select email, password, enabled from user where email=?"
+		authorities-by-username-query="select email, role from user where email=?"
+		
+		
+		/>
+		</authentication-provider>
+	</authentication-manager>
+
+</beans:beans>

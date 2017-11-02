@@ -37,6 +37,7 @@ public class UserController {
 		
 		
 		user.setRole("ROLE_USER");
+		user.setEnabled(true);
 		userDAO.addUser(user);
 		m.addAttribute("usermodel", new User());
 		return "index";

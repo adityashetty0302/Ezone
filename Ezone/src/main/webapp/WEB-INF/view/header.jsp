@@ -66,7 +66,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="register"><span class="glyphicon glyphicon-user"></span>
 					Sign Up</a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+			<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>
 					Login</a></li>
 		</ul>
 		<form class="navbar-form navbar-left">

@@ -18,11 +18,19 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link href="<c:url value="/resources/login.css" />" rel="stylesheet">
-
-<title>Login Page</title>
+<style type ="text/css" >
+   .footer{ 
+       position: fixed;  
+      bottom: 0;
+      margin-bottom: 0;
+       width: 100%;
+       
+   }  
+</style>
+<title>Access Denied</title>
 </head>
 <body>
+
 
 	<nav id="navbar-red" class="navbar navbar-inverse navbar-static-top"
 		role="navigation">
@@ -46,36 +54,17 @@
 		
 		
 
-
-
-
-
+<br>
 <div class = "container">
+<h1>403 Forbidden</h1>
+<br>
 
-<c:if test="${not empty message }">
-	<div class="col-md-offset-3 col-md-6">
-	<div class="alert alert-danger">
-	${message}
-	</div>
-	</div>
-</c:if>
-
-	<div class="wrapper">
-		<form action="${pageContext.request.contextPath}/login" method="post" name="Login_Form" class="form-signin">       
-		    <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
-			  <hr class="colorgraph"><br>
-			  
-			  <input type="text" class="form-control" name="username" placeholder="Email" required="" autofocus="" />
-			  <input type="password" class="form-control" name="password" placeholder="Password" required=""/>     		  
-			 
-			  <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="LOGIN" type="Submit">Login</button>  			
-		</form>			
-	</div>
+<h6>You don't have permission to access this page</h6>
 </div>
-<br>
-<br>
 
+<div class="footer">
 <%@ include file="/WEB-INF/view/footer.jsp" %>
+</div>
 
 </body>
 </html>

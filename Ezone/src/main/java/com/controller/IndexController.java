@@ -25,4 +25,11 @@ public class IndexController {
 	}
 	
 	
+	@RequestMapping(value="/error")
+	public String error()
+	{
+		
+		return "error";
+	}
+	
 }

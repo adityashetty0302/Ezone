@@ -21,6 +21,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 <title>Category-Frontend</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
 <%@ include file="/WEB-INF/view/header.jsp" %>
 
  <h2>Supplier Module</h2>
- <form:form action="${pageContext.request.contextPath}/UpdateSupplier" modelAttribute="suppmodel" method="post">
+ <form:form action="${pageContext.request.contextPath}/admin/UpdateSupplier" modelAttribute="suppmodel" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Supplier ID:</label>
       <div class="col-sm-10">
@@ -50,12 +51,14 @@
       </div>
     </div>
     <br>
+    <br>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-primary navbar-inverse">Insert</button>
       </div>
     </div>
 </form:form>
+
 <br>
 <br>
 <br>

@@ -42,33 +42,51 @@
 					src="<c:url value="resources/logo.jpg"/>" alt=""
 					height="20px" width="90px"></a></li>
 			<li><a href="/Ezone">Home</a></li>
-			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
+			<li><a href="${pageContext.request.contextPath}/productlist">View Products</a></li>
+			
+			<%-- <li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
 				data-toggle="dropdown" href="drop">Product Category<span
 					class="caret"></span></a>
 				<div class="w3-dropdown-content w3-bar-block w3-card-4">
-					<a href="#" class="w3-bar-item w3">asd</a> 
-					<a href="#" class="w3-bar-item w3">asdsad</a>
 					<a href="productlist" class="w3-bar-item w3">All Products</a> 
-						<%--  <c:forEach var="catlist" items="${categoryList}">
+						 <c:forEach var="catlist" items="${categoryList}">
 							<a href="#" class="w3-bar-item w3">${catlist.catName}</a>
-							</c:forEach> --%>
-		</div></li>
+							</c:forEach>
+		</div></li> --%>
 			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
 				data-toggle="dropdown" href="#">Admin Tools<span
 					class="caret"></span></a>
 				<div class="w3-dropdown-content w3-bar-block w3-card-4">
-					<a href="category" class="w3-bar-item w3">Edit Category</a> 
-					<a href="supplier" class="w3-bar-item w3">Edit Supplier</a> 
-					<a href="product" class="w3-bar-item w3">Edit Product</a>
+					<a href="${pageContext.request.contextPath}/admin/category" class="w3-bar-item w3">Edit Category</a> 
+					<a href="${pageContext.request.contextPath}/admin/supplier" class="w3-bar-item w3">Edit Supplier</a> 
+					<a href="${pageContext.request.contextPath}/admin/product" class="w3-bar-item w3">Edit Product</a>
 				    <a href="#" class="w3-bar-item w3">Edit Cart</a>
 				</div></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="register"><span class="glyphicon glyphicon-user"></span>
+			<li><a href="${pageContext.request.contextPath}/register"><span class="glyphicon glyphicon-user"></span>
 					Sign Up</a></li>
-			<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>
+			<li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span>
 					Login</a></li>
+					<li class="w3-dropdown-hover">
+					<a href="drop"
+					class="w3-dropdown-toggle"
+					data-toggle="dropdown" >
+					
+					Full Name
+					<span
+					class="caret"></span></a>
+		
+		
+		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+		<a href="${pageContext.request.contextPath}/logout" class="w3-bar-item w3">Logout</a> 
+		</div>
+		</li>
 		</ul>
+		
+		
+		
+		
 		<form class="navbar-form navbar-left">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Search">

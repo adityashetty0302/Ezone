@@ -21,6 +21,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type ="text/css" >
+   
+</style>
 <title>Category-Frontend</title>
 </head>
 <body>
@@ -28,7 +31,7 @@
 <%@ include file="/WEB-INF/view/header.jsp" %>
 
  <h2>Category Module</h2>
- <form:form action="${pageContext.request.contextPath}/UpdateCategory" modelAttribute="catmodel" method="post">
+ <form:form action="${pageContext.request.contextPath}/admin/UpdateCategory" modelAttribute="catmodel" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Category ID:</label>
       <div class="col-sm-10">
@@ -56,6 +59,7 @@
       </div>
     </div>
 </form:form>
+
 <br>
 <br>
 <br>
@@ -74,8 +78,8 @@
 <br>
 
 
+<%@ include file="/WEB-INF/view/footer.jsp" %>
 
- <%@ include file="/WEB-INF/view/footer.jsp" %>
 
 </body>
 </html>

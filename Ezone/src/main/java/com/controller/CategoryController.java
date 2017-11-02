@@ -24,7 +24,7 @@ public class CategoryController
 	@Autowired
 	CategoryDAO categoryDAO;
 
-	@RequestMapping(value="/category",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/category",method=RequestMethod.GET)
 	public String showCategory(Model m)
 	{
 		List<Category> listCategory=categoryDAO.retrieveCategory();
@@ -34,7 +34,7 @@ public class CategoryController
 	
 	}
 	
-	@RequestMapping(value="/AddCategory",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/AddCategory",method=RequestMethod.POST)
 	public String addCategory(@ModelAttribute("catmodel")Category category,Model m)
 	{
 		categoryDAO.addCategory(category);
@@ -47,7 +47,7 @@ public class CategoryController
 		return "Category";
 	}
 	
-	@RequestMapping(value="/deleteCategory{catId}")
+	@RequestMapping(value="/admin/deleteCategory{catId}")
 	public String deleteCategory(@PathVariable("catId")int catId,Model m)
 	{
 		Category category=categoryDAO.getCategory(catId);
@@ -60,7 +60,7 @@ public class CategoryController
 		return "Category";
 	} 
 	
-	@RequestMapping(value="/updateCategory{catId}",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updateCategory{catId}",method=RequestMethod.GET)
 	public String updateCategory(@PathVariable("catId") int catId,Model m)
 	{
 		Category category=categoryDAO.getCategory(catId);
@@ -75,7 +75,7 @@ public class CategoryController
 		return "UpdateCategory";
 	}
 	
-	@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/UpdateCategory",method=RequestMethod.POST)
 	public String updateMyCategory(@ModelAttribute("catmodel")Category category,Model m)
 	{
 		categoryDAO.updateCategory(category);

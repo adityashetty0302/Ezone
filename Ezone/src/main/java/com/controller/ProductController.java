@@ -40,7 +40,7 @@ public class ProductController
 	@Autowired
 	SupplierDAO supplierDAO;
 	
-	@RequestMapping(value="/product",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/product",method=RequestMethod.GET)
 	public String showProduct(Model m)
 	{
 		List<Product> listProduct=productDAO.retrieveProducts();
@@ -86,7 +86,7 @@ public class ProductController
 	
 
 	
-	@RequestMapping(value="/AddProduct",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/AddProduct",method=RequestMethod.POST)
 	public String insertProduct(@ModelAttribute("prodmodel")Product product,@RequestParam("pimage")MultipartFile fileDetail,Model m)
 	{
 		
@@ -130,7 +130,7 @@ public class ProductController
 	}
 	
 	
-	@RequestMapping(value="/deleteProduct{productId}")
+	@RequestMapping(value="/admin/deleteProduct{productId}")
 	public String deleteProduct(@PathVariable("productId")int productId,Model m)
 	{
 		Product product=productDAO.getProduct(productId);
@@ -147,7 +147,7 @@ public class ProductController
 		return "Product";
 	} 
 	
-	@RequestMapping(value="/updateProduct{productId}",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updateProduct{productId}",method=RequestMethod.GET)
 	public String updateProduct(@PathVariable("productId") int productId,Model m)
 	{
 		Product product=productDAO.getProduct(productId);
@@ -164,7 +164,7 @@ public class ProductController
 		return "UpdateProduct";
 	}
 	
-	@RequestMapping(value="/UpdateProduct",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/UpdateProduct",method=RequestMethod.POST)
 	public String updateMyProduct(@ModelAttribute("prodmodel")Product product,Model m)
 	{
 		productDAO.updateProduct(product);

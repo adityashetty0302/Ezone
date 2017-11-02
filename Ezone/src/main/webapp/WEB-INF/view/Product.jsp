@@ -34,7 +34,7 @@
 <div class="container">
   	<div class="row main">
  <h2>Product Module</h2>
-  <form:form action="AddProduct" class="form-horizontal" modelAttribute="prodmodel"  enctype="multipart/form-data" method="post">
+  <form:form action="${pageContext.request.contextPath}/admin/AddProduct" class="form-horizontal" modelAttribute="prodmodel"  enctype="multipart/form-data" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Product ID:</label>
       <div class="col-sm-5">
@@ -149,7 +149,8 @@
 </div>
 </div>
 <br>
-
+<br>
+<br>
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>
 

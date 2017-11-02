@@ -15,12 +15,12 @@
 
 
 	<http>
-		<intercept-url pattern="/login" access="permitAll" />
-		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
-		<form-login login-page="/login"
-		
-		/>
+		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/**" access="permitAll" />
+		<form-login login-page="/login"/>
+		<access-denied-handler error-page="/error" />
 		<logout />
+		
 		<csrf disabled="true"/>
 	</http>
 

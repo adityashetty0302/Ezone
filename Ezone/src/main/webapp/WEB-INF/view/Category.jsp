@@ -30,7 +30,7 @@
 <div class="container">
   	<div class="row main">
   	<h2>Category Module</h2>
-  <form:form action="AddCategory" class="form-horizontal" modelAttribute="catmodel" method="post">
+  <form:form action="${pageContext.request.contextPath}/admin/AddCategory" class="form-horizontal" modelAttribute="catmodel" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Category ID:</label>
       <div class="col-sm-5">
@@ -90,6 +90,7 @@
 </table>
 </div>
 </div>
+<br>
 <br>
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>

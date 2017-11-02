@@ -30,7 +30,7 @@
 <div class="container">
   	<div class="row main">
 <h2>Supplier Module</h2>
-  <form:form action="AddSupplier" class="form-horizontal" modelAttribute="suppmodel" method="post">
+  <form:form action="${pageContext.request.contextPath}/admin/AddSupplier" class="form-horizontal" modelAttribute="suppmodel" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Supplier ID:</label>
       <div class="col-sm-5">
@@ -91,6 +91,9 @@
 
 
 
+<br>
+<br>
+<br>
 
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>

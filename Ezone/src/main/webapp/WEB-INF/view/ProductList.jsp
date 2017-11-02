@@ -28,7 +28,6 @@
 	<script src="<c:url value="/resources/prodlist.js" />"></script>
 
 	
-	
 <title>Product-Frontend</title>
 </head>
 <body>
@@ -91,23 +90,10 @@
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <%@ include file="/WEB-INF/view/footer.jsp" %>
+
+
 
 </body>
 </html>

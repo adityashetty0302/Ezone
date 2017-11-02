@@ -21,6 +21,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 <title>Product-Frontend</title>
 </head>
 <body>
@@ -32,7 +33,7 @@
 <div class="container">
   	<div class="row main">
  <h2>Product Module</h2>
-  <form:form action="${pageContext.request.contextPath}/UpdateProduct" class="form-horizontal" modelAttribute="prodmodel"  enctype="multipart/form-data" method="post">
+  <form:form action="${pageContext.request.contextPath}/admin/UpdateProduct" class="form-horizontal" modelAttribute="prodmodel"  enctype="multipart/form-data" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2">Product ID:</label>
       <div class="col-sm-5">
@@ -102,24 +103,9 @@
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+<%@ include file="/WEB-INF/view/footer.jsp" %>
 
-
- <%@ include file="/WEB-INF/view/footer.jsp" %>
 
 </body>
 </html>

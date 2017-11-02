@@ -25,7 +25,7 @@ public class SupplierController
 	@Autowired
 	SupplierDAO supplierDAO;
 	
-	@RequestMapping(value="/supplier",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/supplier",method=RequestMethod.GET)
 	public String showSupplier(Model m)
 	{
 		List<Supplier> listSupplier=supplierDAO.retrieveSupplier();
@@ -35,7 +35,7 @@ public class SupplierController
 	
 	}
 	
-	@RequestMapping(value="/AddSupplier",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/AddSupplier",method=RequestMethod.POST)
 	public String addSupplier(@ModelAttribute("suppmodel")Supplier supplier,Model m)
 	{
 		supplierDAO.addSupplier(supplier);
@@ -48,7 +48,7 @@ public class SupplierController
 		return "Supplier";
 	}
 	
-	@RequestMapping(value="/deleteSupplier{supId}")
+	@RequestMapping(value="/admin/deleteSupplier{supId}")
 	public String deleteSupplier(@PathVariable("supId")int supId,Model m)
 	{
 		Supplier supplier=supplierDAO.getSupplier(supId);
@@ -61,7 +61,7 @@ public class SupplierController
 		return "Supplier";
 	} 
 	
-	@RequestMapping(value="/updateSupplier{supId}",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updateSupplier{supId}",method=RequestMethod.GET)
 	public String updateSupplier(@PathVariable("supId") int supId,Model m)
 	{
 		Supplier supplier=supplierDAO.getSupplier(supId);
@@ -76,7 +76,7 @@ public class SupplierController
 		return "UpdateSupplier";
 	}
 	
-	@RequestMapping(value="/UpdateSupplier",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/UpdateSupplier",method=RequestMethod.POST)
 	public String updateMySupplier(@ModelAttribute("suppmodel")Supplier supplier,Model m)
 	{
 		supplierDAO.updateSupplier(supplier);

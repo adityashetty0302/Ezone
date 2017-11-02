@@ -51,6 +51,15 @@
 
 
 <div class = "container">
+
+<c:if test="${not empty message }">
+	<div class="col-md-offset-3 col-md-6">
+	<div class="alert alert-danger">
+	${message}
+	</div>
+	</div>
+</c:if>
+
 	<div class="wrapper">
 		<form action="${pageContext.request.contextPath}/login" method="post" name="Login_Form" class="form-signin">       
 		    <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
@@ -64,6 +73,7 @@
 	</div>
 </div>
 
+<%@ include file="/WEB-INF/view/footer.jsp" %>
 
 </body>
 </html>

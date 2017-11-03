@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.model.Cart;
 import com.model.Category;
 import com.model.Product;
 import com.model.Supplier;
@@ -60,6 +61,7 @@ public class hiberConfig
 		 localSessionFacBuilder.addAnnotatedClass(Supplier.class);
 		 localSessionFacBuilder.addAnnotatedClass(Product.class);
 		 localSessionFacBuilder.addAnnotatedClass(User.class);
+		 localSessionFacBuilder.addAnnotatedClass(Cart.class);
 		 SessionFactory sessionFactory=localSessionFacBuilder.buildSessionFactory();
 		 System.out.println("Session Factory Object Created");
 		 return sessionFactory;

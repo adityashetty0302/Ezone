@@ -108,6 +108,8 @@
 <br>
 <div class="container">
   	<div class="row main">
+  	<div class="container-fluid">
+  	<div class="table-responsive">
 <table class="table table-hover " cellspacing="2" align="center">
 <thead bgcolor="#222">
 
@@ -146,6 +148,8 @@
 </c:forEach>
 </tbody>
 </table>
+</div>
+</div>
 </div>
 </div>
 <br>

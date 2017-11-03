@@ -71,7 +71,7 @@
 	<th><font color="#FFFFFF">Category ID</font></th>
 	<th><font color="#FFFFFF">Category Name</font></th>
 	<th><font color="#FFFFFF">Category Description</font></th>
-	<th><font color="#FFFFFF">Update or Delete</font></th>
+	<th><font color="#FFFFFF">Delete or Update</font></th>
 </tr>
  </thead>
  <tbody>

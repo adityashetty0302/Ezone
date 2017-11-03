@@ -68,7 +68,7 @@
 	<th><font color="#FFFFFF">Supplier ID</font></th>
 	<th><font color="#FFFFFF">Supplier Name</font></th>
 	<th><font color="#FFFFFF">Supplier Address</font></th>
-	<th><font color="#FFFFFF">Update or Delete</font></th>
+	<th><font color="#FFFFFF">Delete or Update</font></th>
 </tr>
  </thead>
  <tbody>

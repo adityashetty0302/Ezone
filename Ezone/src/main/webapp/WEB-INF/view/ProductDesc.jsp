@@ -63,7 +63,7 @@
 						
 						<div class="action">
 							<button class="btn btn-primary navbar-inverse" type="button">Add to cart</button>
-							
+							 <a class="btn btn-primary navbar-inverse" href="#">Back</a>
 						</div>
 					</div>
 					

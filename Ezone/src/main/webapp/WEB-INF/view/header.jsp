@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,6 +21,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<style>
+
+.w3-dropdown-toggle {
+   
+    background-color: #222;
+}
+
+
+
+</style>
+	
 <title>Ezone</title>
 </head>
 
@@ -53,6 +66,9 @@
 							<a href="#" class="w3-bar-item w3">${catlist.catName}</a>
 							</c:forEach>
 		</div></li> --%>
+		
+		
+		<security:authorize access="hasRole('ROLE_ADMIN')">
 			<li class="w3-dropdown-hover"><a class="w3-dropdown-toggle"
 				data-toggle="dropdown" href="#">Admin Tools<span
 					class="caret"></span></a>
@@ -62,13 +78,22 @@
 					<a href="${pageContext.request.contextPath}/admin/product" class="w3-bar-item w3">Product</a>
 				    <!-- <a href="#" class="w3-bar-item w3">Edit Cart</a> -->
 				</div></li>
+				</security:authorize>
+				
+				
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
+		
+			<security:authorize access="isAnonymous()">
 			<li><a href="${pageContext.request.contextPath}/register"><span class="glyphicon glyphicon-user"></span>
 					Sign Up</a></li>
 			<li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span>
 					Login</a></li>
-					<li class="w3-dropdown-hover">
+					</security:authorize>
+					
+					<security:authorize access="isAuthenticated()">
+					
+		<li class="w3-dropdown-hover">
 					<a href="drop"
 					class="w3-dropdown-toggle"
 					data-toggle="dropdown" >
@@ -83,6 +108,9 @@
 		<a href="${pageContext.request.contextPath}/logout" class="w3-bar-item w3">Logout</a> 
 		</div>
 		</li>
+		
+		</security:authorize>
+		
 		</ul>
 		
 		

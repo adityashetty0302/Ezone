@@ -31,17 +31,17 @@ public class UserTest {
 	
 	
 	
-	//@Test
+	@Test
 	public void addUserTest()
 	{
 		User user=new User();
-		user.setEmail("adikskaljdoiaw@gmail.com");
-		user.setPassword("asd");
+		user.setEmail("b");
+		user.setPassword("b");
 		user.setName("Aditya Shetty");
 		user.setAddress("Mumbai");
 		user.setCountry("India");
 		user.setPhone("984651684689");
-		user.setRole("admin");
+		user.setRole("ROLE_ADMIN");
 		user.setEnabled(true);
 		
 		assertTrue(userDAO.addUser(user));
@@ -49,7 +49,7 @@ public class UserTest {
 	
 	
 	
-	@Test
+//	@Test
 	public void getUserTest()
 	{
 		User user=userDAO.getUser("a");

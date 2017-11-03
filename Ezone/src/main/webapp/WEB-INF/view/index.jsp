@@ -64,8 +64,7 @@
     <span class="sr-only">Next</span>
   </a>
   </div>
-  
-<h2>Index Page</h2>
+
 
 <%@ include file="/WEB-INF/view/footer.jsp" %>
 

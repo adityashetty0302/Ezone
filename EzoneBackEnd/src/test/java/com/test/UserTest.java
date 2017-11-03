@@ -11,6 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.dao.UserDAO;
 import com.hibernateConfig.hiberConfig;
+import com.model.Category;
 import com.model.User;
 
 public class UserTest {
@@ -30,7 +31,7 @@ public class UserTest {
 	
 	
 	
-	@Test
+	//@Test
 	public void addUserTest()
 	{
 		User user=new User();
@@ -44,6 +45,17 @@ public class UserTest {
 		user.setEnabled(true);
 		
 		assertTrue(userDAO.addUser(user));
+	}
+	
+	
+	
+	@Test
+	public void getUserTest()
+	{
+		User user=userDAO.getUser("a");
+		assertNotNull("Problem in Getting:",user);
+		System.out.println("User Name:"+user.getName());
+		
 	}
 
 }

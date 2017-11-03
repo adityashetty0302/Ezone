@@ -9,6 +9,7 @@ public class UserModel implements Serializable {
 	String name;
 	String email;
 	String role;
+	
 	public String getName() {
 		return name;
 	}

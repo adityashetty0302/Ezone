@@ -57,10 +57,10 @@
 				data-toggle="dropdown" href="#">Admin Tools<span
 					class="caret"></span></a>
 				<div class="w3-dropdown-content w3-bar-block w3-card-4">
-					<a href="${pageContext.request.contextPath}/admin/category" class="w3-bar-item w3">Edit Category</a> 
-					<a href="${pageContext.request.contextPath}/admin/supplier" class="w3-bar-item w3">Edit Supplier</a> 
-					<a href="${pageContext.request.contextPath}/admin/product" class="w3-bar-item w3">Edit Product</a>
-				    <a href="#" class="w3-bar-item w3">Edit Cart</a>
+					<a href="${pageContext.request.contextPath}/admin/category" class="w3-bar-item w3">Category</a> 
+					<a href="${pageContext.request.contextPath}/admin/supplier" class="w3-bar-item w3">Supplier</a> 
+					<a href="${pageContext.request.contextPath}/admin/product" class="w3-bar-item w3">Product</a>
+				    <!-- <a href="#" class="w3-bar-item w3">Edit Cart</a> -->
 				</div></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
@@ -73,7 +73,8 @@
 					class="w3-dropdown-toggle"
 					data-toggle="dropdown" >
 					
-					Full Name
+					${userModel.name}
+					
 					<span
 					class="caret"></span></a>
 		
@@ -87,12 +88,13 @@
 		
 		
 		
-		<form class="navbar-form navbar-left">
+		<%-- <form class="navbar-form navbar-left">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
 			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
+		</form> --%>
+		
 	</div>
 	</nav>
 

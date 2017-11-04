@@ -134,7 +134,28 @@ public class CartController {
 	}
 	
 
+	@RequestMapping(value="/deleteCart",method=RequestMethod.POST)
+	public String deleteCart(HttpServletRequest request, Model m)
+	{
+		
+		SecurityContextHolder.getContext().getAuthentication();
+		UserModel userModel = (UserModel) session.getAttribute("userModel");
+		String name=userModel.getName();
+		
+		int pid = Integer.parseInt(request.getParameter("pid"));
+		Cart cartexist=cartDAO.getCartItem(pid,name);
+		
+		Cart cm = new Cart();
+		cm.setCartItemId(cartexist.getCartItemId());
+		cartDAO.deleteCart(cm);
+		
+		List<Cart> listCart=cartDAO.getCartItems(name);
+		m.addAttribute("cartlist",listCart);
+		
+		return "Cart";
 
+		
+	}
 	
 	
 	}

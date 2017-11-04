@@ -23,7 +23,18 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<style>
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
 
+     tab5 { padding-left: 27em; }
+     
+</style>
 
 	
 <title>Product-Frontend</title>
@@ -50,8 +61,8 @@
 	<th><font color="#FFFFFF">Quantity</font></th>
 	<th><font color="#FFFFFF">Price</font></th>
 	<th><font color="#FFFFFF">Picture</font></th>
-	<th><font color="#FFFFFF">Total</font></th>
 	<th><font color="#FFFFFF">Change Quantity</font></th>
+	<th><font color="#FFFFFF">Total</font></th>
 	<th><font color="#FFFFFF">Remove</font></th>
 </tr>
  </thead>
@@ -64,7 +75,6 @@
 <td>
 <img src="<c:url value="/resources/${cartlist.productId}.jpg"/>" width="100px" height="80px"/>
 </td>
-<td>hah</td>
 <td>
 		<form action="${pageContext.request.contextPath}/updateCart" method="post">
 		<input type="hidden" value="${cartlist.productId}" name="pid" />
@@ -75,17 +85,31 @@
 		<input class="btn btn-primary navbar-inverse" type="submit" value="Enter">
 		</form>
 </td>
-
+<td><c:out value="Rs. ${ cartlist.price * cartlist.quantity }"></c:out></td>
+<td>
+		<form action="${pageContext.request.contextPath}/deleteCart" method="post">
+		<input type="hidden" value="${cartlist.productId}" name="pid" />
+		<input class="btn btn-primary navbar-inverse" type="submit" value="Remove">
+		</form>
+</td>
+<c:set var="gtot" value="${ gtot + cartlist.price * cartlist.quantity }"></c:set>
 </tr>
 </c:forEach>
 </tbody>
 </table>
+<hr style="height:1px;border:none;color:#333;background-color:#333;" />
+<h2> &nbsp; Grand Total: <tab5>Rs. <c:out value="${gtot }"></c:out></tab5> </h2>
+<hr style="height:1px;border:none;color:#333;background-color:#333;" />
 </div>
 </div>
 </div>
 </div>
 
 
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>

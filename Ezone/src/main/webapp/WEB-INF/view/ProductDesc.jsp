@@ -79,7 +79,7 @@
 							</security:authorize>
 							<br>
 							
-							 <a class="btn btn-primary navbar-inverse" href="productlist">Back</a>
+							 <a class="btn btn-primary navbar-inverse" href="${pageContext.request.contextPath}/productlist">Back</a>
 							 
 						</div>
 					</div>

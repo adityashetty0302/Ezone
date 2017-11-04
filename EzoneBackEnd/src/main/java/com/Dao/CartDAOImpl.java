@@ -3,9 +3,11 @@ package com.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -63,10 +65,15 @@ public class CartDAOImpl implements CartDAO
 		}
 	}
 
-	public Cart getCartItem(int cartitemId) 
+	public Cart getCartItem(int productId, String name) 
 	{
+		
 		Session session=sessionFactory.openSession();
-		Cart cart=(Cart)session.get(Cart.class,cartitemId);
+		Criteria criteria = session.createCriteria(Cart.class);
+		criteria.add(Restrictions.eq("productId", productId));
+		criteria.add(Restrictions.eq("name", name));
+		Cart cart = (Cart) criteria.uniqueResult();
+//		Cart cart=(Cart)session.get(Cart.class,productId,name);
 		session.close();
 		return cart;
 	}
@@ -74,7 +81,7 @@ public class CartDAOImpl implements CartDAO
 	public List<Cart> getCartItems(String name) 
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Cart where name=:name and status='NP'");
+		Query query=session.createQuery("from Cart where name=:name");
 		query.setParameter("name",name);
 		List<Cart> listCartItem=query.list();
 		session.close();

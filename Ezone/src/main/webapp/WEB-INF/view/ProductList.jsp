@@ -63,24 +63,19 @@
                         </div>
                         
                         <div class="row">
-                         
-                          
-                           <div class="col-xs-12 col-md-7">
-                    Category: ${product.catName}
-                    
-                        </div>
+                          <div class="col-xs-5 col-md-7">
+                 &nbsp;  Category: ${product.catName}
+                      </div>
+                       
+                        <div class="col-xs-12 col-md-1">
+                            <p class="lead"><font color="red">
+                               Rs.${product.price}</font></p>
                         </div>
                         
-                        <div class="row">
-                        <div class="col-xs-12 col-md-7">
-                            <p class="lead"><font color="red">
-                                Rs.${product.price}</font></p>
-                        </div>
-                        <div class="col-xs-12 col-md-1">
+                       <!--  <div class="col-xs-12 col-md-1">
                             <a class="btn btn-primary navbar-inverse" href="#">Add to cart</a>
-                        </div>
+                        </div> -->
                     </div>
-               
             </div>
         </div>
         </c:forEach>

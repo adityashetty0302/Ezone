@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 
 
@@ -62,8 +63,24 @@
 					
 						
 						<div class="action">
-							<button class="btn btn-primary navbar-inverse" type="button">Add to cart</button>
-							 <a class="btn btn-primary navbar-inverse" href="#">Back</a>
+						<security:authorize access="hasRole('ROLE_USER')">
+						<form action="${pageContext.request.contextPath}/addToCart" method="post">
+						<input type="hidden" value="${prodmodel.productId}" name="pId" />
+						<input type="hidden" value="${prodmodel.price}" name="pPrice" />
+						<input type="hidden" value="${prodmodel.productName}" name="name" />
+						
+						<label class="control-label col-sm-2">Quantity</label>
+						<input type="number" class="form-control" name="quant" required />
+						
+						<br>
+						
+							<input class="btn btn-primary navbar-inverse" type="submit" value="Add to cart">
+							</form>
+							</security:authorize>
+							<br>
+							
+							 <a class="btn btn-primary navbar-inverse" href="productlist">Back</a>
+							 
 						</div>
 					</div>
 					

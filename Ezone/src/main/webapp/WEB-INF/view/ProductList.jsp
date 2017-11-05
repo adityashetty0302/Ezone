@@ -1,8 +1,8 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 
 
@@ -25,69 +25,71 @@
 
 
 <link href="<c:url value="/resources/prodlist.css" />" rel="stylesheet">
-	<script src="<c:url value="/resources/prodlist.js" />"></script>
+<script src="<c:url value="/resources/prodlist.js" />"></script>
 
-	
+
 <title>Product-Frontend</title>
 </head>
 <body>
 
-<%@ include file="/WEB-INF/view/header.jsp" %>
+	<%@ include file="/WEB-INF/view/header.jsp"%>
 
 
 
-<div class="container">
-	<table class="table table-hover " >
-<thead bgcolor="#222">
-<tr>
-	<th><font color="#FFFFFF">All Products</font>&nbsp;
-<div class="btn-group">
-            <a href="#" id="list" class="btn btn-primary navbar-inverse"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-primary navbar-inverse"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-</div>
-        </th>	
-</tr>
- </thead>
- </table>
-    <div id="products" class="row list-group">
-    <c:forEach items="${productList}" var="product">
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-            <a href="productDesc/${product.productId}">
-                <img class="group list-group-image" src="<c:url value="/resources/${product.productId}.jpg"/>" width="400px" height="250px"/></a>
-                <div class="caption">
-                    <h3 class="group inner list-group-item-heading">
-                    <a href="productDesc/${product.productId}">${product.productName}</a>
-                        </h3>
-                        </div>
-                        
-                        <div class="row">
-                          <div class="col-xs-5 col-md-7">
-                 &nbsp;  Category: ${product.catName}
-                      </div>
-                       
-                        <div class="col-xs-12 col-md-1">
-                            <p class="lead"><font color="red">
-                               Rs.${product.price}</font></p>
-                        </div>
-                        
-                       <!--  <div class="col-xs-12 col-md-1">
+	<div class="container">
+		<table class="table table-hover ">
+			<thead bgcolor="#222">
+				<tr>
+					<th><font color="#FFFFFF">All Products</font>&nbsp;
+						<div class="btn-group">
+							<a href="#" id="list" class="btn btn-primary navbar-inverse"><span
+								class="glyphicon glyphicon-th-list"> </span>List</a> <a href="#"
+								id="grid" class="btn btn-primary navbar-inverse"><span
+								class="glyphicon glyphicon-th"></span>Grid</a>
+						</div></th>
+				</tr>
+			</thead>
+		</table>
+		<div id="products" class="row list-group">
+			<c:forEach items="${productList}" var="product">
+				<div class="item  col-xs-4 col-lg-4">
+					<div class="thumbnail">
+						<a href="productDesc/${product.productId}"> <img
+							class="group list-group-image"
+							src="<c:url value="/resources/${product.productId}.jpg"/>"
+							width="400px" height="250px" /></a>
+						<div class="caption">
+							<h3 class="group inner list-group-item-heading">
+								<a href="productDesc/${product.productId}">${product.productName}</a>
+							</h3>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-5 col-md-7">&nbsp; Category:
+								${product.catName}</div>
+
+							<div class="col-xs-12 col-md-1">
+								<p class="lead">
+									<font color="red"> Rs.${product.price}</font>
+								</p>
+							</div>
+
+							<!--  <div class="col-xs-12 col-md-1">
                             <a class="btn btn-primary navbar-inverse" href="#">Add to cart</a>
                         </div> -->
-                    </div>
-            </div>
-        </div>
-        </c:forEach>
-        </div>
-      </div>
-         
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+	</div>
 
-<br>
-<br>
-<br>
 
-<%@ include file="/WEB-INF/view/footer.jsp" %>
+	<br>
+	<br>
+	<br>
+
+	<%@ include file="/WEB-INF/view/footer.jsp"%>
 
 
 

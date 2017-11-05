@@ -10,37 +10,28 @@ import com.model.Category;
 import com.model.User;
 
 @Repository("userDAO")
-public class UserDAOImpl implements UserDAO
-{
+public class UserDAOImpl implements UserDAO {
 	@Autowired
 	SessionFactory sessionFactory;
 
 	@Transactional
-	public boolean addUser(User user) 
-	{
-		try
-		{
-		Session session=sessionFactory.getCurrentSession();
-		session.save(user);
-		return true;
+	public boolean addUser(User user) {
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			session.save(user);
+			return true;
+		} catch (Exception e) {
+			return false;
 		}
-		catch(Exception e)
-		{
-		return false;
-		}
-		
-		
+
 	}
-	
-	
-	
 
 	public User getUser(String email) {
-		Session session=sessionFactory.openSession();
-		User user=(User)session.get(User.class,email);
+		Session session = sessionFactory.openSession();
+		User user = (User) session.get(User.class, email);
 		session.close();
 		return user;
-		
+
 	}
 
 }

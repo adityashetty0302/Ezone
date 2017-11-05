@@ -15,21 +15,17 @@ public class IndexController {
 	@Autowired
 	CategoryDAO categoryDAO;
 
-	
-	@RequestMapping(value="/")
-	public String show(Model m)
-	{
-		List<Category> listCategory=categoryDAO.retrieveCategory();
-		m.addAttribute("categoryList",listCategory);
+	@RequestMapping(value = "/")
+	public String show(Model m) {
+		List<Category> listCategory = categoryDAO.retrieveCategory();
+		m.addAttribute("categoryList", listCategory);
 		return "index";
 	}
-	
-	
-	@RequestMapping(value="/error")
-	public String error()
-	{
-		
+
+	@RequestMapping(value = "/error")
+	public String error() {
+
 		return "error";
 	}
-	
+
 }

@@ -6,13 +6,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Supplier 
-{
+public class Supplier {
 
 	@Id
 	int supId;
-	
-	String supName,supAdd;
+
+	String supName, supAdd;
 
 	public int getSupId() {
 		return supId;
@@ -37,8 +36,5 @@ public class Supplier
 	public void setSupAdd(String supAdd) {
 		this.supAdd = supAdd;
 	}
-
-	
-	
 
 }

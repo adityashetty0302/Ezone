@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CartDAO;
 import com.dao.ProductDAO;
@@ -21,43 +22,38 @@ import com.model.Category;
 import com.model.Product;
 import com.model.UserModel;
 
-
 @Controller
 public class CartController {
 
 	@Autowired
 	HttpSession session;
-	
+
 	@Autowired
 	CartDAO cartDAO;
-	
+
 	@Autowired
 	ProductDAO productDAO;
-	
 
-	
-	@RequestMapping(value="/addToCart",method=RequestMethod.POST)
-	public String addToCart(HttpServletRequest request, Model m)
-	{
+	@RequestMapping(value = "/addToCart", method = RequestMethod.POST)
+	public String addToCart(HttpServletRequest request, Model m) {
 		SecurityContextHolder.getContext().getAuthentication();
 		UserModel userModel = (UserModel) session.getAttribute("userModel");
-		String name=userModel.getName();
-		
-		String productName=request.getParameter("name");
-		int price=Integer.parseInt(request.getParameter("pPrice"));
-		int pid=Integer.parseInt(request.getParameter("pId"));
-		int quantity=Integer.parseInt(request.getParameter("quant"));
-		Cart cartexist=cartDAO.getCartItem(pid,name);
-		
-//		System.out.println(pid);
-//		System.out.println(name);
-//		System.out.println(productName);
-//		System.out.println(price);
-//		System.out.println(productId);
-//		System.out.println(quantity);
-		
-		if(cartexist == null)
-		{
+		String name = userModel.getName();
+
+		String productName = request.getParameter("name");
+		int price = Integer.parseInt(request.getParameter("pPrice"));
+		int pid = Integer.parseInt(request.getParameter("pId"));
+		int quantity = Integer.parseInt(request.getParameter("quant"));
+		Cart cartexist = cartDAO.getCartItem(pid, name);
+
+		// System.out.println(pid);
+		// System.out.println(name);
+		// System.out.println(productName);
+		// System.out.println(price);
+		// System.out.println(productId);
+		// System.out.println(quantity);
+
+		if (cartexist == null) {
 			Cart cm = new Cart();
 			cm.setName(name);
 			cm.setPrice(price);
@@ -65,10 +61,8 @@ public class CartController {
 			cm.setProductName(productName);
 			cm.setQuantity(quantity);
 			cartDAO.addCart(cm);
-			
-		}
-		else if(cartexist!=null)
-		{
+
+		} else if (cartexist != null) {
 			Cart cm = new Cart();
 			cm.setCartItemId(cartexist.getCartItemId());
 			cm.setName(name);
@@ -79,43 +73,40 @@ public class CartController {
 			cartDAO.updateCart(cm);
 		}
 
-		
-		List<Product> listProduct=productDAO.retrieveProducts();
-		m.addAttribute("productList",listProduct);
-		
+		List<Product> listProduct = productDAO.retrieveProducts();
+		m.addAttribute("productList", listProduct);
+
 		m.addAttribute("prodmodel", new Product());
-		
+
 		return "ProductList";
-		
+
 	}
-	
-	@RequestMapping(value="/cart",method=RequestMethod.GET)
-	public String showCategory(Model m)
-	{
+
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	public String showCategory(Model m) {
 		SecurityContextHolder.getContext().getAuthentication();
 		UserModel userModel = (UserModel) session.getAttribute("userModel");
-		String name=userModel.getName();
-		
-		List<Cart> listCart=cartDAO.getCartItems(name);
-		m.addAttribute("cartlist",listCart);
-		
+		String name = userModel.getName();
+
+		List<Cart> listCart = cartDAO.getCartItems(name);
+		m.addAttribute("cartlist", listCart);
+
 		return "Cart";
 	}
-	
-	@RequestMapping(value="/updateCart",method=RequestMethod.POST)
-	public String updateCart(HttpServletRequest request, Model m)
-	{
-		
+
+	@RequestMapping(value = "/updateCart", method = RequestMethod.POST)
+	public String updateCart(HttpServletRequest request, Model m) {
+
 		SecurityContextHolder.getContext().getAuthentication();
 		UserModel userModel = (UserModel) session.getAttribute("userModel");
-		String name=userModel.getName();
-		
+		String name = userModel.getName();
+
 		int pid = Integer.parseInt(request.getParameter("pid"));
 		int quantity = Integer.parseInt(request.getParameter("quant"));
-		int price=Integer.parseInt(request.getParameter("pPrice"));
-		String productName=request.getParameter("name");
-		Cart cartexist=cartDAO.getCartItem(pid,name);
-		
+		int price = Integer.parseInt(request.getParameter("pPrice"));
+		String productName = request.getParameter("name");
+		Cart cartexist = cartDAO.getCartItem(pid, name);
+
 		Cart cm = new Cart();
 		cm.setCartItemId(cartexist.getCartItemId());
 		cm.setProductId(pid);
@@ -124,41 +115,49 @@ public class CartController {
 		cm.setPrice(price);
 		cm.setProductName(productName);
 		cartDAO.updateCart(cm);
-		
-		
-		List<Cart> listCart=cartDAO.getCartItems(name);
-		m.addAttribute("cartlist",listCart);
-		
+
+		List<Cart> listCart = cartDAO.getCartItems(name);
+		m.addAttribute("cartlist", listCart);
+
 		return "Cart";
 
 	}
-	
 
-	@RequestMapping(value="/deleteCart",method=RequestMethod.POST)
-	public String deleteCart(HttpServletRequest request, Model m)
-	{
-		
+	@RequestMapping(value = "/deleteCart", method = RequestMethod.POST)
+	public String deleteCart(HttpServletRequest request, Model m) {
+
 		SecurityContextHolder.getContext().getAuthentication();
 		UserModel userModel = (UserModel) session.getAttribute("userModel");
-		String name=userModel.getName();
-		
+		String name = userModel.getName();
+
 		int pid = Integer.parseInt(request.getParameter("pid"));
-		Cart cartexist=cartDAO.getCartItem(pid,name);
-		
+		Cart cartexist = cartDAO.getCartItem(pid, name);
+
 		Cart cm = new Cart();
 		cm.setCartItemId(cartexist.getCartItemId());
 		cartDAO.deleteCart(cm);
-		
-		List<Cart> listCart=cartDAO.getCartItems(name);
-		m.addAttribute("cartlist",listCart);
-		
+
+		List<Cart> listCart = cartDAO.getCartItems(name);
+		m.addAttribute("cartlist", listCart);
+
 		return "Cart";
 
-		
 	}
-	
-	
-	}
-	
-	
 
+	@RequestMapping(value = "/checkout")
+	public String checkout(HttpServletRequest request, Model m) {
+		String gtot = request.getParameter("gtot");
+		// System.out.println(gtot);
+		m.addAttribute("gtot", gtot);
+		return "Checkout";
+	}
+
+	@RequestMapping(value = "/invoice")
+	public String invoice(HttpServletRequest request, Model m) {
+		String gtot = request.getParameter("gtot");
+		// System.out.println(gtot);
+		m.addAttribute("gtot", gtot);
+		return "Invoice";
+	}
+
+}

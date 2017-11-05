@@ -11,10 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.model.Product;
 
-
 @Repository("productDAO")
-public class ProductDAOImpl implements ProductDAO
-{
+public class ProductDAOImpl implements ProductDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
@@ -22,63 +20,50 @@ public class ProductDAOImpl implements ProductDAO
 	@Transactional
 	public boolean addProduct(Product product) {
 
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().save(product);
 			return true;
+		} catch (Exception e) {
+			return false;
 		}
-		catch(Exception e)
-		{
-		return false;
-		}
-		
-		
+
 	}
 
 	@Transactional
 	public boolean deleteProduct(Product product) {
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().delete(product);
 			return true;
+		} catch (Exception e) {
+			return false;
 		}
-		catch(Exception e)
-		{
-		return false;
-		}
-		
+
 	}
 
 	public List<Product> retrieveProducts() {
-		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Product");
-		List<Product> listProducts=query.list();
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from Product");
+		List<Product> listProducts = query.list();
 		session.close();
 		return listProducts;
-		
+
 	}
 
 	@Transactional
 	public boolean updateProduct(Product product) {
-		try
-		{
-		sessionFactory.getCurrentSession().saveOrUpdate(product);
-		return true;
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(product);
+			return true;
+		} catch (Exception e) {
+			System.out.println("Exception Arised:" + e);
+			return false;
 		}
-		catch(Exception e)
-		{
-		System.out.println("Exception Arised:"+e);
-		return false;
-		}
-		
-	
-		
+
 	}
 
-	public Product getProduct(int productId) 
-	{
-		Session session=sessionFactory.openSession();
-		Product product=(Product)session.get(Product.class,productId);
+	public Product getProduct(int productId) {
+		Session session = sessionFactory.openSession();
+		Product product = (Product) session.get(Product.class, productId);
 		session.close();
 		return product;
 	}

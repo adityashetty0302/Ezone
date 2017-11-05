@@ -12,36 +12,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.dao.UserDAO;
 import com.model.User;
 
-
-
-
 @Controller
 public class UserController {
-	
+
 	@Autowired
 	UserDAO userDAO;
 
-	
-	@RequestMapping(value="/register",method=RequestMethod.GET)
-	public String showUser(Model m)
-	{
-		
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String showUser(Model m) {
+
 		m.addAttribute("usermodel", new User());
 		return "Register";
-	
+
 	}
-	
-	@RequestMapping(value="/AddUser",method=RequestMethod.POST)
-	public String addCategory(@ModelAttribute("usermodel")User user,Model m)
-	{
-		
-		
+
+	@RequestMapping(value = "/AddUser", method = RequestMethod.POST)
+	public String addCategory(@ModelAttribute("usermodel") User user, Model m) {
+
 		user.setRole("ROLE_USER");
 		user.setEnabled(true);
 		userDAO.addUser(user);
 		m.addAttribute("usermodel", new User());
 		return "index";
 	}
-	
-	
+
 }

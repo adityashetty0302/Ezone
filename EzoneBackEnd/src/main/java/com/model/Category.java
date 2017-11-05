@@ -8,18 +8,14 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Repository;
 
-
-
 @Entity
 @Table
-public class Category
-{
-	
-	
+public class Category {
+
 	@Id
 	int catId;
-	
-	String catName,catDesc;
+
+	String catName, catDesc;
 
 	public int getCatId() {
 		return catId;
@@ -44,6 +40,5 @@ public class Category
 	public void setCatDesc(String catDesc) {
 		this.catDesc = catDesc;
 	}
-	
 
 }

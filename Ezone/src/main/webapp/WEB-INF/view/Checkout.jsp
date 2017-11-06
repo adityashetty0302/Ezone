@@ -119,7 +119,7 @@
 
 				<div class='form-row'>
 					<div class='col-md-12 form-group'>
-						<form action="${pageContext.request.contextPath}/invoice"
+						<form action="${pageContext.request.contextPath}/user/invoice"
 							method="post">
 							<input type="hidden" value="${gtot}" name="gtot" />
 							<tab4> <input
@@ -132,7 +132,7 @@
 				<div class='form-row'>
 					<div class='col-md-12 form-group'>
 						<a class='form-control btn btn-primary navbar-inverse'
-							href="${pageContext.request.contextPath}/cart">Go to Cart</a>
+							href="${pageContext.request.contextPath}/user/cart">Go to Cart</a>
 					</div>
 				</div>
 			</div>

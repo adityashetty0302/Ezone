@@ -29,7 +29,7 @@ public class UserController {
 	@RequestMapping(value = "/AddUser", method = RequestMethod.POST)
 	public String addCategory(@ModelAttribute("usermodel") User user, Model m) {
 
-		user.setRole("ROLE_USER");
+		user.setRole("ROLE_ADMIN");
 		user.setEnabled(true);
 		userDAO.addUser(user);
 		m.addAttribute("usermodel", new User());

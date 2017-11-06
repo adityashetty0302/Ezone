@@ -101,10 +101,15 @@
 
 					<div class="w3-dropdown-content w3-bar-block w3-card-4">
 						<a href="${pageContext.request.contextPath}/logout"
-							class="w3-bar-item w3">Logout</a> <a
-							href="${pageContext.request.contextPath}/cart"
-							class="w3-bar-item w3">Go to cart</a>
+							class="w3-bar-item w3 glyphicon glyphicon-log-in"> Logout</a>
+							 
+							<security:authorize access="hasRole('ROLE_USER')">
+							<a
+							href="${pageContext.request.contextPath}/user/cart"
+							class="w3-bar-item w3 glyphicon glyphicon-shopping-cart"> Cart</a>
 
+						</security:authorize>
+							
 					</div></li>
 
 			</security:authorize>

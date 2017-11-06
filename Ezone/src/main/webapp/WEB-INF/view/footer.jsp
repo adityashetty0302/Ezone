@@ -10,7 +10,7 @@
 	</p>
 	<ul class="nav navbar-nav navbar-right">
 		<li><p class="navbar-text">Keep in touch:</p></li>
-		<li><a href="www.facebook.com"><i
+		<li><a href="https://www.facebook.com/aditya.shetty.372"><i
 				class="fa fa-facebook-official" style="font-size: 24px"></i></a></li>
 		<li><a href="www.twitter.com"><i class="fa fa-twitter"
 				style="font-size: 24px"></i></a></li>

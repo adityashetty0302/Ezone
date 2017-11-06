@@ -71,7 +71,7 @@
 
 					<div class="action">
 						<security:authorize access="hasRole('ROLE_USER')">
-							<form action="${pageContext.request.contextPath}/addToCart"
+							<form action="${pageContext.request.contextPath}/user/addToCart"
 								method="post">
 								<input type="hidden" value="${prodmodel.productId}" name="pId" />
 								<input type="hidden" value="${prodmodel.price}" name="pPrice" />

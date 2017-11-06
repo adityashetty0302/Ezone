@@ -16,9 +16,9 @@ public class IndexController {
 	CategoryDAO categoryDAO;
 
 	@RequestMapping(value = "/")
-	public String show(Model m) {
-		List<Category> listCategory = categoryDAO.retrieveCategory();
-		m.addAttribute("categoryList", listCategory);
+	public String show() {
+//		List<Category> listCategory = categoryDAO.retrieveCategory();
+//		m.addAttribute("categoryList", listCategory);
 		return "index";
 	}
 

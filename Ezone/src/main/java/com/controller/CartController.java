@@ -34,9 +34,9 @@ public class CartController {
 	@Autowired
 	ProductDAO productDAO;
 
-	@RequestMapping(value = "/addToCart", method = RequestMethod.POST)
+	@RequestMapping(value = "/user/addToCart", method = RequestMethod.POST)
 	public String addToCart(HttpServletRequest request, Model m) {
-		SecurityContextHolder.getContext().getAuthentication();
+//		SecurityContextHolder.getContext().getAuthentication();
 		UserModel userModel = (UserModel) session.getAttribute("userModel");
 		String name = userModel.getName();
 
@@ -82,9 +82,9 @@ public class CartController {
 
 	}
 
-	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/cart", method = RequestMethod.GET)
 	public String showCategory(Model m) {
-		SecurityContextHolder.getContext().getAuthentication();
+//		SecurityContextHolder.getContext().getAuthentication();
 		UserModel userModel = (UserModel) session.getAttribute("userModel");
 		String name = userModel.getName();
 
@@ -94,10 +94,10 @@ public class CartController {
 		return "Cart";
 	}
 
-	@RequestMapping(value = "/updateCart", method = RequestMethod.POST)
+	@RequestMapping(value = "/user/updateCart", method = RequestMethod.POST)
 	public String updateCart(HttpServletRequest request, Model m) {
 
-		SecurityContextHolder.getContext().getAuthentication();
+//		SecurityContextHolder.getContext().getAuthentication();
 		UserModel userModel = (UserModel) session.getAttribute("userModel");
 		String name = userModel.getName();
 
@@ -123,10 +123,10 @@ public class CartController {
 
 	}
 
-	@RequestMapping(value = "/deleteCart", method = RequestMethod.POST)
+	@RequestMapping(value = "/user/deleteCart", method = RequestMethod.POST)
 	public String deleteCart(HttpServletRequest request, Model m) {
 
-		SecurityContextHolder.getContext().getAuthentication();
+//		SecurityContextHolder.getContext().getAuthentication();
 		UserModel userModel = (UserModel) session.getAttribute("userModel");
 		String name = userModel.getName();
 
@@ -144,7 +144,7 @@ public class CartController {
 
 	}
 
-	@RequestMapping(value = "/checkout")
+	@RequestMapping(value = "/user/checkout")
 	public String checkout(HttpServletRequest request, Model m) {
 		String gtot = request.getParameter("gtot");
 		// System.out.println(gtot);
@@ -152,7 +152,7 @@ public class CartController {
 		return "Checkout";
 	}
 
-	@RequestMapping(value = "/invoice")
+	@RequestMapping(value = "/user/invoice")
 	public String invoice(HttpServletRequest request, Model m) {
 		String gtot = request.getParameter("gtot");
 		// System.out.println(gtot);

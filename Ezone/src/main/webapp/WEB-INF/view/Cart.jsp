@@ -81,7 +81,7 @@ tab4 {
 										src="<c:url value="/resources/${cartlist.productId}.jpg"/>"
 										width="100px" height="80px" /></td>
 									<td>
-										<form action="${pageContext.request.contextPath}/updateCart"
+										<form action="${pageContext.request.contextPath}/user/updateCart"
 											method="post">
 											<input type="hidden" value="${cartlist.productId}" name="pid" />
 											<input type="hidden" value="${cartlist.price}" name="pPrice" />
@@ -95,7 +95,7 @@ tab4 {
 									<td><c:out
 											value="Rs. ${ cartlist.price * cartlist.quantity }"></c:out></td>
 									<td>
-										<form action="${pageContext.request.contextPath}/deleteCart"
+										<form action="${pageContext.request.contextPath}/user/deleteCart"
 											method="post">
 											<input type="hidden" value="${cartlist.productId}" name="pid" />
 											<input class="btn btn-primary navbar-inverse" type="submit"
@@ -121,7 +121,7 @@ tab4 {
 						Shopping</a>
 
 					<c:if test="${not empty cartlist}">
-						<form action="${pageContext.request.contextPath}/checkout"
+						<form action="${pageContext.request.contextPath}/user/checkout"
 							method="post">
 							<input type="hidden" value="${gtot}" name="gtot" />
 							<tab4>

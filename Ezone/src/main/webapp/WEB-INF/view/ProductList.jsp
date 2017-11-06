@@ -54,13 +54,13 @@
 			<c:forEach items="${productList}" var="product">
 				<div class="item  col-xs-4 col-lg-4">
 					<div class="thumbnail">
-						<a href="productDesc/${product.productId}"> <img
+						<a href="${pageContext.request.contextPath}/productDesc/${product.productId}"> <img
 							class="group list-group-image"
 							src="<c:url value="/resources/${product.productId}.jpg"/>"
 							width="400px" height="250px" /></a>
 						<div class="caption">
 							<h3 class="group inner list-group-item-heading">
-								<a href="productDesc/${product.productId}">${product.productName}</a>
+								<a href="${pageContext.request.contextPath}/productDesc/${product.productId}">${product.productName}</a>
 							</h3>
 						</div>
 

@@ -70,7 +70,7 @@
 
 							<div class="col-xs-12 col-md-1">
 								<p class="lead">
-									<font color="red"> Rs.${product.price}</font>
+									<font color="red"> &#8377;${product.price}</font>
 								</p>
 							</div>
 

@@ -63,7 +63,7 @@
 					<p class="product-description">Stock: ${prodmodel.stock}</p>
 
 					<h4 class="price">
-						Price:<span> Rs.${prodmodel.price}</span>
+						Price:<span>  &#8377;${prodmodel.price}</span>
 					</h4>
 					<p class="vote"></p>
 

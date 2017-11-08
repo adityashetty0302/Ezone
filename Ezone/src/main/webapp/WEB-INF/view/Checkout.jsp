@@ -125,7 +125,7 @@
 							<tab4> <input
 								class="form-control btn btn-primary navbar-inverse"
 								type="submit" value="Pay
-							Rs. ${gtot}"></tab4>
+							&#8377; ${gtot}"></tab4>
 						</form>
 					</div>
 				</div>

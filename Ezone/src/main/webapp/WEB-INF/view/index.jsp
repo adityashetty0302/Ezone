@@ -25,7 +25,7 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner">
 		<div class="item active">
-			<img src="<c:url value="/resources/car1.jpg"/>" alt="car1">
+			<img src="<c:url value="/resources/caral.jpg"/>" alt="car1">
 			<div class="carousel-caption">
 				<h2>Welcome to ezone</h2>
 			</div>

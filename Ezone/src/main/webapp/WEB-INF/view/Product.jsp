@@ -136,7 +136,7 @@
 									<td>${prodlist.productId}</td>
 									<td>${prodlist.productName}</td>
 									<td>${prodlist.productDesc}</td>
-									<td>${prodlist.price}</td>
+									<td>&#8377;${prodlist.price}</td>
 									<td>${prodlist.stock}</td>
 									<td>${prodlist.catName}</td>
 									<td>${prodlist.supName}</td>

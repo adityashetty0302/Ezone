@@ -53,7 +53,7 @@
 			</div>
 
 			<div class='form-row'>
-				&emsp;<label class='control-label'>Amount Payable: </label>&nbsp;Rs.
+				&emsp;<label class='control-label'>Amount Payable: </label>&nbsp;&#8377;
 				${gtot}
 			</div>
 			<div class='form-row'>

@@ -68,7 +68,7 @@ tab4 {
 								<th><font color="#FFFFFF">Picture</font></th>
 								<th><font color="#FFFFFF">Change Quantity</font></th>
 								<th><font color="#FFFFFF">Total</font></th>
-								<th><font color="#FFFFFF">Remove</font></th>
+								<th><font color="#FFFFFF">Remove </font></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -76,7 +76,7 @@ tab4 {
 								<tr>
 									<td>${cartlist.productName}</td>
 									<td>${cartlist.quantity}</td>
-									<td>${cartlist.price}</td>
+									<td>&#8377 ${cartlist.price}</td>
 									<td><img
 										src="<c:url value="/resources/${cartlist.productId}.jpg"/>"
 										width="100px" height="80px" /></td>
@@ -112,7 +112,7 @@ tab4 {
 						style="height: 1px; border: none; color: #333; background-color: #333;" />
 					<h2>
 						&nbsp; Grand Total:
-						<tab5>Rs. <c:out value="${gtot}"></c:out></tab5>
+						<tab5>&#8377; <c:out value="${gtot}"></c:out></tab5>
 					</h2>
 					<hr
 						style="height: 1px; border: none; color: #333; background-color: #333;" />
